@@ -14,6 +14,7 @@ function DetailView(props) {
           {recipe.ingredients.map((ing) => <li key={ing} message={ing} >{ing}</li>)}
         </ul>
       <button onClick={() => navigate(-1)}>back</button>
+      <img src={ require('../images/' + recipe.image) } />
     </div>
   );
 }
