@@ -4,24 +4,86 @@
         "name":"Schnitzel",
         "duration":30,
         "ingredients":[
-        "Fleisch",
-        "Pommes",
-        "Ketchup"
+            {"name":"Fleisch", "amounth": 300, "scale": "g"},
+            {"name":"Pommes", "amounth": 300, "scale": "g"},
+            {"name":"Ketchup", "amounth": 25, "scale": "ml"}
         ],
-        "image": "Schnitzel.jpg"
+        "image": "Schnitzel.jpg",
+        "process": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
     },
     {
         "id": 1,
         "name":"Spagetti",
         "duration":15,
         "ingredients":[
-        "Nudel",
-        "Tomaten",
-        "Wasser",
-        "Kaese",
-        "Gabel",
-        "Messer"
+            {"name":"Nudeln", "amounth": 300, "scale": "g"},
+            {"name":"Tomaten", "amounth": 50, "scale": "g"},
+            {"name":"Wasser", "amounth": 1000, "scale": "ml"},
+            {"name":"Kaese", "amounth": 200, "scale": "g"},
+            {"name":"Gabel", "amounth": 1, "scale": "pcs"},
+            {"name":"Messer", "amounth": 1, "scale": "pcs"}
         ],
-        "image": "Spagetti.jpg"
+        "image": "Spagetti.jpg",
+        "process": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.   "
+    },
+    {
+        "id": 2,
+        "name":"Platzhalter1",
+        "duration":10,
+        "ingredients":[
+            {"name":"abc", "amounth": 10, "scale": "g"},
+            {"name":"xyz", "amounth": 10, "scale": "g"},
+            {"name":"lmp", "amounth": 25, "scale": "x"}
+        ],
+        "image": "Placeholder.jpg",
+        "process": "Platzhalter.txt"
+    },
+    {
+        "id": 3,
+        "name":"Platzhalter2",
+        "duration":20,
+        "ingredients":[
+            {"name":"abc", "amounth": 10, "scale": "g"},
+            {"name":"xyz", "amounth": 10, "scale": "g"},
+            {"name":"lmp", "amounth": 25, "scale": "x"}
+        ],
+        "image": "Placeholder.jpg",
+        "process": "Platzhalter.txt"
+    },
+    {
+        "id": 4,
+        "name":"Platzhalter3",
+        "duration":30,
+        "ingredients":[
+            {"name":"abc", "amounth": 10, "scale": "g"},
+            {"name":"xyz", "amounth": 10, "scale": "g"},
+            {"name":"lmp", "amounth": 25, "scale": "x"}
+        ],
+        "image": "Placeholder.jpg",
+        "process": "Platzhalter.txt"
+    },
+    {
+        "id": 5,
+        "name":"Platzhalter4",
+        "duration":40,
+        "ingredients":[
+            {"name":"abc", "amounth": 10, "scale": "g"},
+            {"name":"xyz", "amounth": 10, "scale": "g"},
+            {"name":"lmp", "amounth": 25, "scale": "x"}
+        ],
+        "image": "Placeholder.jpg",
+        "process": "Platzhalter.txt"
+    },
+    {
+        "id": 6,
+        "name":"Platzhalter5",
+        "duration":50,
+        "ingredients":[
+            {"name":"abc", "amounth": 10, "scale": "g"},
+            {"name":"xyz", "amounth": 10, "scale": "g"},
+            {"name":"lmp", "amounth": 25, "scale": "x"}
+        ],
+        "image": "Placeholder.jpg",
+        "process": "Platzhalter.txt"
     }
 ]

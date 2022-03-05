@@ -8,6 +8,7 @@ function Header() {
       <h2>Unsere Kopfzeile</h2>
       <button onClick={() => navigate('/')}>Hauptseite</button>
       <button onClick={() => navigate('/search')}>Suche</button>
+      <button onClick={() => navigate('/shoppingList')}>Einkaufsliste</button>
     </div>
   );
 }
