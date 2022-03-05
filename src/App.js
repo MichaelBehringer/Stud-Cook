@@ -2,7 +2,7 @@ import React from "react";
 import './App.css';
 import './globalStyles.css'
 
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
 import DetailView from "./Views/DetailView";
 import Home from "./Views/Home";
@@ -14,9 +14,8 @@ import Impressum from "./Views/Impressum";
 import ShoppingList from "./Views/ShoppingList";
 
 function App() {
-  const navigate = useNavigate();
   return (
-    <div>
+    <div className="mainStyle">
       <Header />
       <Routes>
         <Route exact path="/" element={<Home/>}/>

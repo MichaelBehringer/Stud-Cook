@@ -20,15 +20,18 @@ function DetailView(props) {
   return (
     <div className="card cardMain">
         <h1>Rezept: {recipe.name}</h1>
+      <div className="flex-container">
         <img alt={recipe.name} src={ require('../images/' + recipe.image) } />
-        <p>Dauer: {recipe.duration}</p>
+        <div>
+        <p>Dauer: {recipe.duration + ' Minuten'}</p>
         <p>Zutaten:</p>
         <ul>
           {recipe.ingredients.map((ing) => <li key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li>)}
         </ul>
-      
+      </div>
+    </div>
       <p>Vorgehen:</p>
-      <p>{recipe.process}</p>
+      {recipe.process.map((step) => <p key={step}>{step}</p>)}
       <button onClick={() => addToLocalStorage(recipeID)}>Zur Einkaufsliste hinzufuegen</button>
       <button onClick={() => navigate(-1)}>back</button>
     </div>

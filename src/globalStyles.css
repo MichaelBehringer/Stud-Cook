@@ -18,4 +18,24 @@
   
   img {
     border-radius: 5px 5px 0 0;
+    display: block;
+    max-width:600px;
+    width: 95%;
+    height: auto;
+    margin-right: 25px;
   }
+
+.mainStyle {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+h2 {
+  background-color: #013220;
+  color: white;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
