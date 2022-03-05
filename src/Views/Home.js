@@ -1,6 +1,6 @@
 import React from "react";
 
-function HomeView() {
+function Home() {
   return (
     <div>
       <h1>Home</h1>
@@ -8,4 +8,4 @@ function HomeView() {
   );
 }
 
-export default HomeView;
+export default Home;

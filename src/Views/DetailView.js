@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from 'react-router';
-import {useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function DetailView(props) {
   const navigate = useNavigate();

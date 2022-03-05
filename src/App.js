@@ -4,23 +4,27 @@ import './App.css';
 import { Route, Routes, useNavigate } from 'react-router-dom'
 
 import DetailView from "./Views/DetailView";
-import HomeView from "./Views/HomeView";
-import SearchView from "./Views/SearchView";
+import Home from "./Views/Home";
+import Search from "./Views/Search";
+import Header from "./Views/Header";
+import Footer from "./Views/Footer";
+import Contact from "./Views/Contact";
+import Impressum from "./Views/Impressum";
 
 function App() {
   const navigate = useNavigate();
   return (
     <div>
-      <h2>Unsere Kopfzeile</h2>
-      <button onClick={() => navigate('/')}>Hauptseite</button>
-      <button onClick={() => navigate('/search')}>Suche</button>
-        <Routes>
-          <Route exact path="/" element={<HomeView/>}/>
-          <Route exact path="/search" element={<SearchView/>}/>
-          <Route exact path="/detail/:recipeID" element={<DetailView/>}/>
-          <Route path="*" element={<HomeView/>}/>
-        </Routes>
-      <h2>Unsere Fuszeile</h2>
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<Home/>}/>
+        <Route exact path="/search" element={<Search/>}/>
+        <Route exact path="/contact" element={<Contact/>}/>
+        <Route exact path="/impressum" element={<Impressum/>}/>
+        <Route exact path="/detail/:recipeID" element={<DetailView/>}/>
+        <Route path="*" element={<Home/>}/>
+      </Routes>
+      <Footer />
     </div>
   );
 }

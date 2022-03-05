@@ -1,7 +1,7 @@
 import React from "react";
 import {useNavigate } from 'react-router-dom'
 
-function SearchView() {
+function Search() {
   const navigate = useNavigate();
   var recipes = require('../data/Recipes.json');
   return (
@@ -12,4 +12,4 @@ function SearchView() {
   );
 }
 
-export default SearchView;
+export default Search;
