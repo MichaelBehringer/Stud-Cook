@@ -1,0 +1,25 @@
+[
+    {
+        "id": 0,
+        "name":"Schnitzel",
+        "duration":30,
+        "ingredients":[
+        "Fleisch",
+        "Pommes",
+        "Ketchup"
+        ]
+    },
+    {
+        "id": 1,
+        "name":"Spagetti",
+        "duration":15,
+        "ingredients":[
+        "Nudel",
+        "Tomaten",
+        "Wasser",
+        "Kaese",
+        "Gabel",
+        "Messer"
+        ]
+    }
+]

@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
 
+import { Route, Routes, useNavigate } from 'react-router-dom'
+
+import DetailView from "./Views/DetailView";
+import HomeView from "./Views/HomeView";
+import SearchView from "./Views/SearchView";
+
 function App() {
+  const navigate = useNavigate();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>Unsere Kopfzeile</h2>
+      <button onClick={() => navigate('/')}>Hauptseite</button>
+      <button onClick={() => navigate('/search')}>Suche</button>
+        <Routes>
+          <Route exact path="/" element={<HomeView/>}/>
+          <Route exact path="/search" element={<SearchView/>}/>
+          <Route exact path="/detail/:recipeID" element={<DetailView/>}/>
+          <Route path="*" element={<HomeView/>}/>
+        </Routes>
+      <h2>Unsere Fuszeile</h2>
     </div>
   );
 }
