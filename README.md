@@ -4,6 +4,9 @@
 3. "npm i" ausführen
 4. "npm start" zum Starten
 
+#Google Firebase
+https://stud-cook.web.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
