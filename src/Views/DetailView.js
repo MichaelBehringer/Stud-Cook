@@ -3,7 +3,15 @@ import { useParams } from 'react-router';
 import { useNavigate } from 'react-router-dom'
 import { readComment, addComment } from "../functions/Firebase";
 import { addToLocalStorage } from "../functions/LocalStorage";
-import {v4} from 'uuid';
+
+function sortFunction(a, b) {
+  if (a[0] === b[0]) {
+      return 0;
+  }
+  else {
+      return (a[0] < b[0]) ? -1 : 1;
+  }
+}
 
 function generateCommentArray(comments) {
   let commentArray = []
@@ -11,11 +19,12 @@ function generateCommentArray(comments) {
     let value = comments[key];
     commentArray.push([key, value]);
   }
+  commentArray.sort(sortFunction);
   return commentArray;
 }
 
 function saveComment(recipeID, comments, setComments) {
-  const newID = v4();
+  const newID = Date.now();
   const comment = document.getElementById("inputComment").value;
   addComment(recipeID, comment, newID);
   setComments({...comments, [newID]: comment})
@@ -39,16 +48,15 @@ function DetailView(props) {
       <div className="card cardMain">
         <h1>Rezept: {recipe.name}</h1>
         <div className="flex-container">
-          <img alt={recipe.name} src={ require('../images/' + recipe.image) } />
+          <img className="foodIMG" alt={recipe.name} src={ require('../images/' + recipe.image) } />
           <div>
-          <p>Dauer: {recipe.duration + ' Minuten'}</p>
-          <p>Zutaten:</p>
-          <ul>
-            {recipe.ingredients.map((ing) => <li key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li>)}
-          </ul>
+            <p>Zutaten:</p>
+            <ul>
+              {recipe.ingredients.map((ing) => <li key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li>)}
+            </ul>
         </div>
         </div>
-        <p>Vorgehen:</p>
+        <p>Zubereitung: ({recipe.duration} Minuten)</p>
         {recipe.process.map((step) => <p key={step}>{step}</p>)}
         <button onClick={() => addToLocalStorage(recipeID)}>Zur Einkaufsliste hinzufuegen</button>
         <button onClick={() => navigate(-1)}>back</button>

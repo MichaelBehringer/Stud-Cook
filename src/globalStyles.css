@@ -16,7 +16,7 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
   
-  img {
+  .foodIMG {
     border-radius: 5px 5px 0 0;
     display: block;
     max-width:600px;
@@ -38,4 +38,14 @@ h2 {
 .flex-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+}
+
+.App .Content {
+  padding-top: 100px;
 }
