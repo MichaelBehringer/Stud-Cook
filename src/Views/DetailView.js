@@ -55,9 +55,10 @@ function DetailView() {
             <ul>
               {recipe.ingredients.map((ing) => <li key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li>)}
             </ul>
-            <h2>Zubereitung</h2><p>({recipe.duration} Minuten)</p>
+            <h2>Zubereitungszeit</h2><p>{recipe.duration} Minuten</p>
+          </div>
         </div>
-        </div>
+        <h2>Zubereitung</h2>
         {recipe.process.map((step) => <p key={step}>{step}</p>)}
         <button onClick={() => addToLocalStorage(recipeID)}>Zur Einkaufsliste hinzufuegen</button>
         

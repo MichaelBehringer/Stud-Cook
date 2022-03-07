@@ -1,6 +1,6 @@
-.Header {
+.header {
   position: fixed;
-  top: 0; /* Stick it to the top */
+  top: 0;
   max-height: 70px;
   width: 100vw;
 
@@ -11,22 +11,24 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
   
-.Logo {
+.headerLogo {
   grid-area: logo;
   height: 70px;
   cursor: pointer;
+  margin-left: 5%;
 }
   
-.Nav {
+.nav {
   display: grid;
   grid-area: nav;
   grid-template-columns: repeat(5, auto);
   align-items: center;
   justify-items: center;
+  margin-right: 5%;
 }
 
-.Nav span {
-  color: #A9C45E;
+.nav span {
+  color: #66921B;
   font-size: 20px;
   font-weight: 500;
   transition: 0.5s;
@@ -34,15 +36,15 @@
   cursor: pointer;
 }
 
-.Nav a:hover {
+.nav a:hover {
   transform: scale(1.1);
 }
 
-.Nav span:hover{
-  color: #66921B;
+.nav span:hover{
+  color: #A9C45E;
 }
 
-.Burger {
+.burger {
   display: none;
   grid-area: burger;
   margin: 0 20px 0 0;
@@ -53,21 +55,21 @@
   background: none;
   outline: none;
   transition: 0.1s;
-  color: #A9C45E;
+  color: #66921B;
 }
-.Burger:active {
+.burger:active {
   transform: scale(1.2);
 }
 
-.Burger:hover{
-  color: #66921B;
+.burger:hover{
+  color: #A9C45E;
 }
 
 @media (max-width: 700px) {
-  .Header {
+  .header {
     grid-template-areas: "logo burger" "nav nav";
   }
-  .Nav {
+  .nav {
     grid-template-rows: repeat(4, auto);
     grid-template-columns: none;
     grid-row-gap: 20px;
@@ -83,19 +85,19 @@
   }
 }
 
-.NavAnimation-enter {
+.navAnimation-enter {
   opacity: 0;
   transform: scale(0.5);
 }
-.NavAnimation-enter-active {
+.navAnimation-enter-active {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 350ms, transform 350ms;
 }
-.NavAnimation-exit {
+.navAnimation-exit {
   opacity: 1;
 }
-.NavAnimation-exit-active {
+.navAnimation-exit-active {
   opacity: 0;
   transform: scale(0.5);
   transition: opacity 350ms, transform 350ms;

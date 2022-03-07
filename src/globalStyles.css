@@ -8,12 +8,13 @@
 }
 
 .cardMain {
-  width: 95%;
+  width: 80%;
 }
 
 .flex-container {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 .foodIMG {
@@ -44,4 +45,17 @@
   border: none;
   font-size: 30px;
   margin-top: 10px;
+}
+
+.recipePic{
+  display: block;
+  max-width:300px;
+  width: 100%;
+  height: auto;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+body{
+  background-image: cross-fade();
 }
