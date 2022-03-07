@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { useNavigate } from 'react-router-dom'
 import { readComment, addComment } from "../functions/Firebase";
 import { addToLocalStorage } from "../functions/LocalStorage";
+import { getNextRecipe, getPreviousRecipe, getRecipeForID } from "../functions/RecipesFunctions";
 
 function sortFunction(a, b) {
   if (a[0] === b[0]) {
@@ -36,7 +37,7 @@ function DetailView() {
 
   const navigate = useNavigate();
   const { recipeID } = useParams();
-  var recipe = require('../data/Recipes.json')[recipeID];
+  var recipe = getRecipeForID(recipeID);
 
   useEffect(() => {
     readComment(recipeID).then(comm=>setComments(comm))
@@ -46,7 +47,8 @@ function DetailView() {
   return (
     <div>
       <div className="card cardMain">
-      <button className="backButton" onClick={() => navigate(-1)}>&#60;</button>
+      <button className="backButton" onClick={() => navigate('/detail/' + getNextRecipe(recipeID).id)}>&#62;</button>
+      <button className="backButton" onClick={() => navigate('/detail/' + getPreviousRecipe(recipeID).id)}>&#60;</button>
         <h1>{recipe.name}</h1>
         <div className="flex-container">
           <img className="foodIMG" alt={recipe.name} src={ require('../images/' + recipe.image) } />
