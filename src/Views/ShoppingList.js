@@ -1,4 +1,20 @@
 import React from "react";
+import "./ShoppingList.css";
+
+function download(filename, text) {
+  var pom = document.createElement('a');
+  pom.setAttribute('href', 'data:text/plain;charset=utf-8,' +
+
+      encodeURIComponent(text));
+  pom.setAttribute('download', filename);
+
+  pom.style.display = 'none';
+  document.body.appendChild(pom);
+
+  pom.click();
+
+  document.body.removeChild(pom);
+}
 
 function ShoppingList() {
   const [, updateState] = React.useState();
@@ -18,7 +34,9 @@ function ShoppingList() {
         <h1>Einkaufsliste ist leer</h1>
       </div>
       }
-      <button onClick={() => {localStorage.removeItem('shoppingList'); forceUpdate()}}>Zur Einkaufsliste leeren</button>
+    
+      <button class="prettybutton" onClick={() => {localStorage.removeItem('shoppingList'); forceUpdate()}}>Einkaufsliste leeren</button>
+      
     </div>
   );
 }
