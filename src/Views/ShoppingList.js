@@ -1,19 +1,13 @@
 import React from "react";
 import "./ShoppingList.css";
+import jsPDF from "jspdf"
+import logo from "../images/name.png"
 
-function download(filename, text) {
-  var pom = document.createElement('a');
-  pom.setAttribute('href', 'data:text/plain;charset=utf-8,' +
-
-    encodeURIComponent(text));
-  pom.setAttribute('download', filename);
-
-  pom.style.display = 'none';
-  document.body.appendChild(pom);
-
-  pom.click();
-
-  document.body.removeChild(pom);
+function pdfGenerate(){
+  var doc = new jsPDF("portrait")
+  doc.addImage(logo, "PNG", 0, 0, 100, 20);
+  doc.text("\n \n \n Test Text", 10, 10)
+  doc.save("Einkaufsliste.pdf")
 }
 
 function ShoppingList() {
@@ -27,16 +21,10 @@ function ShoppingList() {
       {stringShoppingList ?
         <div>
           <ul>
-            {recipes.map((recipe) =>
-              {
-                if (JSON.parse(stringShoppingList).shoppingList.includes(recipe.id)) {
-                  return recipe.ingredients.map((ing) => <div className="backForListForInt"> <li className="listForInt" key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li></div>)
-                
-                }
-                
-              }
-            )
-            }
+            {recipes.map((recipe) => {
+              if (JSON.parse(stringShoppingList).shoppingList.includes(recipe.id)) {
+                return recipe.ingredients.map((ing) => <div className="backForListForInt"> <li className="listForInt" key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li></div>)
+              }})}
 
           </ul>
         </div>
@@ -45,8 +33,11 @@ function ShoppingList() {
           <h1>Einkaufsliste ist leer</h1>
         </div>
       }
-      <button className="prettybutton" onClick={() => { localStorage.removeItem('shoppingList'); forceUpdate() }}>Einkaufsliste leeren</button>
-
+      <div style={{ textAlign: "center" }}>
+        <button className="prettybutton" onClick={() => { localStorage.removeItem('shoppingList'); forceUpdate() }}>Einkaufsliste leeren</button>
+        <br></br>
+        <button className="prettybutton" onClick={pdfGenerate}>PDF TEST</button>
+      </div>
     </div>
   );
 }
