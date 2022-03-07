@@ -17,6 +17,7 @@ function download(filename, text) {
 }
 
 function ShoppingList() {
+  var recipe = require('../data/Recipes.json');
   const [, updateState] = React.useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
   let stringShoppingList = localStorage.getItem('shoppingList')
@@ -27,6 +28,11 @@ function ShoppingList() {
       <div>
         <ul>
           {JSON.parse(stringShoppingList).shoppingList.map((id) => <li key={id} message={id} >{id}</li>)}
+          for (let countOfRecepies = 0; countOfRecepies <; countOfRecepies++) {
+            {if(key = recipe[countOfRecepies].id){
+              console.log("Succ")
+            }}
+          }
         </ul>
       </div>
       :
@@ -34,6 +40,8 @@ function ShoppingList() {
         <h1>Einkaufsliste ist leer</h1>
       </div>
       }
+      
+      <a>{recipe[0].ingredients[0].name}</a>
     
       <button class="prettybutton" onClick={() => {localStorage.removeItem('shoppingList'); forceUpdate()}}>Einkaufsliste leeren</button>
       
