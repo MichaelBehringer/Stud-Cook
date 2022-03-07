@@ -1,43 +1,32 @@
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px;
-    padding: 2px 16px;
-  }
-
-.cardElement {
-    width: 40%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  padding: 2px 16px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .cardMain {
-    width: 95%;
-}
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  .foodIMG {
-    border-radius: 5px 5px 0 0;
-    display: block;
-    max-width:600px;
-    width: 95%;
-    height: auto;
-    margin-right: 25px;
-  }
-
-.mainStyle {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
-h2 {
-  background-color: #013220;
-  color: white;
+  width: 95%;
 }
 
 .flex-container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.foodIMG {
+  display: block;
+  max-width:600px;
+  width: 100%;
+  height: auto;
+  margin-right: 25px;
+}
+
+.mainStyle {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .App {
@@ -48,4 +37,11 @@ h2 {
 
 .App .Content {
   padding-top: 100px;
+}
+
+.backButton{
+  background-color: white;
+  border: none;
+  font-size: 30px;
+  margin-top: 10px;
 }

@@ -3,7 +3,10 @@ import React from "react";
 function Contact() {
   return (
     <div>
-      <h1>Kontakt</h1>
+      <div className="card cardMain">
+        <h1>Kontakt</h1>
+        
+      </div>
     </div>
   );
 }

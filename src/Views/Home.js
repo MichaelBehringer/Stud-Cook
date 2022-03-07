@@ -3,7 +3,10 @@ import React from "react";
 function Home() {
   return (
     <div>
-      <h1>Home</h1>
+      <div className="card cardMain">
+        <h1>Willkommen!</h1>
+        
+      </div>
     </div>
   );
 }

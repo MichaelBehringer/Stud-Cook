@@ -31,7 +31,7 @@ function saveComment(recipeID, comments, setComments) {
   document.getElementById("inputComment").value = ''
 }
 
-function DetailView(props) {
+function DetailView() {
   const [comments, setComments] = useState({})
 
   const navigate = useNavigate();
@@ -46,20 +46,21 @@ function DetailView(props) {
   return (
     <div>
       <div className="card cardMain">
-        <h1>Rezept: {recipe.name}</h1>
+      <button className="backButton" onClick={() => navigate(-1)}>&#60;</button>
+        <h1>{recipe.name}</h1>
         <div className="flex-container">
           <img className="foodIMG" alt={recipe.name} src={ require('../images/' + recipe.image) } />
           <div>
-            <p>Zutaten:</p>
+            <h2>Zutaten</h2>
             <ul>
               {recipe.ingredients.map((ing) => <li key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li>)}
             </ul>
+            <h2>Zubereitung</h2><p>({recipe.duration} Minuten)</p>
         </div>
         </div>
-        <p>Zubereitung: ({recipe.duration} Minuten)</p>
         {recipe.process.map((step) => <p key={step}>{step}</p>)}
         <button onClick={() => addToLocalStorage(recipeID)}>Zur Einkaufsliste hinzufuegen</button>
-        <button onClick={() => navigate(-1)}>back</button>
+        
       </div>
       <div className="card cardMain">
         <h1>Kommentare:</h1>
