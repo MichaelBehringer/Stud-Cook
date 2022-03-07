@@ -5,7 +5,20 @@
     border-radius: 12px;
     transition-duration: 0.4s;
   }
- .prettybutton:hover{
+
+  .prettybutton:hover{
     background-color: #555555;
     color: white;
+}
+
+.listForInt{
+  padding: 0.5%;
+  background: #fa7900;
+  margin: 1%;
+  list-style-position: inside;
+}
+
+.backForListForInt{
+    background: #fabc5f;
+    padding: 0.01%;
 }

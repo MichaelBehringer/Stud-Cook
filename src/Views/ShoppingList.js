@@ -22,7 +22,7 @@ function ShoppingList() {
   const forceUpdate = React.useCallback(() => updateState({}), []);
   let stringShoppingList = localStorage.getItem('shoppingList')
   return (
-    <div>
+    <div className="card cardMain">
       <h1>Einkaufsliste</h1>
       {stringShoppingList ?
         <div>
@@ -30,7 +30,7 @@ function ShoppingList() {
             {recipes.map((recipe) =>
               {
                 if (JSON.parse(stringShoppingList).shoppingList.includes(recipe.id)) {
-                  return recipe.ingredients.map((ing) => <li key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li>)
+                  return recipe.ingredients.map((ing) => <div className="backForListForInt"> <li className="listForInt" key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li></div>)
                 
                 }
                 
