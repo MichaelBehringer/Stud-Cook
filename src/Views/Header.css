@@ -44,7 +44,7 @@
   color: #A9C45E;
 }
 
-.burger {
+.burgerButton {
   display: none;
   grid-area: burger;
   margin: 0 20px 0 0;
@@ -57,15 +57,15 @@
   transition: 0.1s;
   color: #66921B;
 }
-.burger:active {
+.burgerButton:active {
   transform: scale(1.2);
 }
 
-.burger:hover{
+.burgerButton:hover{
   color: #A9C45E;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 850px) {
   .header {
     grid-template-areas: "logo burger" "nav nav";
   }
@@ -80,7 +80,7 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
-  .Burger {
+  .burgerButton {
     display: inline;
   }
 }

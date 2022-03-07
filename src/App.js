@@ -10,6 +10,7 @@ import Search from "./Views/Search";
 import Header from "./Views/Header";
 import Contact from "./Views/Contact";
 import Impressum from "./Views/Impressum";
+import ShoppingList from "./Views/ShoppingList";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/search" element={<Search/>}/>
+        <Route exact path="/shoppingList" element={<ShoppingList/>}/>
         <Route exact path="/contact" element={<Contact/>}/>
         <Route exact path="/impressum" element={<Impressum/>}/>
         <Route exact path="/detail/:recipeID" element={<DetailView/>}/>

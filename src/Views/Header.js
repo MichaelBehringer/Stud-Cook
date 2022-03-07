@@ -3,14 +3,16 @@ import React, { useState, useEffect } from "react";
 import "./Header.css";
 import { CSSTransition } from "react-transition-group";
 import { useNavigate } from 'react-router-dom'
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 export default function Header() {
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const navigate = useNavigate();
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 700px)");
+    const mediaQuery = window.matchMedia("(max-width: 850px)");
     mediaQuery.addListener(handleMediaQueryChange);
     handleMediaQueryChange(mediaQuery);
 
@@ -33,7 +35,7 @@ export default function Header() {
 
   return (
     <header className="header">
-      <img onClick={() => navigate('/')} src={require("../images/name.png")} className="headerLogo" alt="logo"/>
+      <img onClick={() => navigate('/')} src={require("../images/"+ (width<=850 ? 'name_small.png' : 'name.png'))} className="headerLogo" alt="logo"/>
       <CSSTransition
         in={!isSmallScreen || isNavVisible}
         timeout={350}
@@ -48,7 +50,7 @@ export default function Header() {
           <span onClick={() => {navigate('/impressum'); toggleNav()}}>Impressum</span>
         </nav>
       </CSSTransition>
-      <button onClick={toggleNav} className="burger">
+      <button onClick={toggleNav} className="burgerButton">
         ☰
       </button>
     </header>
