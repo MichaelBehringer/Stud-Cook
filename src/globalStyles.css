@@ -10,6 +10,11 @@
 
 .cardMain {
   width: 80%;
+  margin-bottom: 25px;
+}
+.cardComment {
+  width: 80%;
+  padding: 8px 16px;
 }
 
 .flex-container {
@@ -60,4 +65,42 @@
 
 body{
   background-image: cross-fade();
+}
+
+.colorThemeButton {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #66921B;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
+.addToShoppingListButton {
+  margin-bottom: 13px;
+}
+
+
+.colorThemeButton:hover {
+  background-color: #66921B;
+  color: white;
+}
+
+.shareButtons {
+  float: right;
+}
+
+.addCommentButton {
+  text-align: center;
+}
+
+.searchButton {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 120px;
+}
+
+.textJustify {
+  text-align: justify;
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router';
 import { useNavigate } from 'react-router-dom'
+import {EmailIcon, EmailShareButton, WhatsappIcon, WhatsappShareButton} from "react-share";
 import { readComment, addComment } from "../functions/Firebase";
 import { addToLocalStorage } from "../functions/LocalStorage";
 import { getNextRecipe, getPreviousRecipe, getRecipeForID } from "../functions/RecipesFunctions";
@@ -24,9 +25,16 @@ function generateCommentArray(comments) {
   return commentArray;
 }
 
-function saveComment(recipeID, comments, setComments) {
+function toggleWriteComment(recipeID, comments, setComments) {
+  const enteredComment = prompt('Kommentar eingeben:');
+  if (enteredComment === null) {
+    return;
+  }
+  saveComment(recipeID, comments, setComments, enteredComment);
+}
+
+function saveComment(recipeID, comments, setComments, comment) {
   const newID = Date.now();
-  const comment = document.getElementById("inputComment").value;
   addComment(recipeID, comment, newID);
   setComments({...comments, [newID]: comment})
   document.getElementById("inputComment").value = ''
@@ -41,8 +49,7 @@ function DetailView() {
 
   useEffect(() => {
     readComment(recipeID).then(comm=>setComments(comm))
-    // eslint-disable-next-line
-  }, []);
+  }, [recipeID]);
 
   return (
     <div>
@@ -61,16 +68,22 @@ function DetailView() {
           </div>
         </div>
         <h2>Zubereitung</h2>
-        {recipe.process.map((step) => <p key={step}>{step}</p>)}
-        <button onClick={() => addToLocalStorage(recipeID)}>Zur Einkaufsliste hinzufuegen</button>
+        {recipe.process.map((step) => <p className="textJustify" key={step}>{step}</p>)}
+        <button className="colorThemeButton addToShoppingListButton" onClick={() => addToLocalStorage(recipeID)}>Zur Einkaufsliste hinzufügen</button>
+        <WhatsappShareButton className="shareButtons" url="http://localhost:3000/#/">
+          <WhatsappIcon size={35} round={true}/> 
+        </WhatsappShareButton>
+        <EmailShareButton className="shareButtons" url="http://localhost:3000/#/">
+          <EmailIcon size={35} round={true}/> 
+        </EmailShareButton>
         
       </div>
       <div className="card cardMain">
         <h1>Kommentare:</h1>
-        {comments ? generateCommentArray(comments).map((entry) => <p className="card cardMain" key={entry[0]}>{entry[1]}</p>) : <p>Keine Kommentare vorhanden</p>}
-        <span>Kommentar: </span>
-        <input id="inputComment" type="text" />
-        <button onClick={() => saveComment(recipeID, comments, setComments)}>Speichern</button>
+        <div className="addCommentButton">
+        <button onClick={() => toggleWriteComment(recipeID, comments, setComments)} className="colorThemeButton">✎ Kommentar schreiben</button>
+        </div>
+        {comments ? generateCommentArray(comments).map((entry) => <p className="card cardComment textJustify" key={entry[0]}>{entry[1]}</p>) : <p>Keine Kommentare vorhanden</p>}
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+/* eslint eqeqeq: 0 */
+
 export function getRecipeForID(searchID) {
 	const recipes = require('../data/Recipes.json');
 
@@ -17,6 +19,7 @@ export function getNextRecipe(searchID) {
 				returnRecipe = recipes[idx+1]
 			}
 		}
+		return returnRecipe
 	});
 
 	return returnRecipe;
@@ -35,6 +38,7 @@ export function getPreviousRecipe(searchID) {
 				returnRecipe = recipes[idx-1]
 			}
 		}
+		return returnRecipe
 	});
 
 	return returnRecipe;
