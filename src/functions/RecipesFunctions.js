@@ -12,14 +12,14 @@ export function getNextRecipe(searchID) {
 	let returnRecipe = {};
 
 	recipes.filter((recipe, idx) => {
-		if(recipe.id==searchID) {
-			if((idx+1)==recipes.length) {
-				returnRecipe =  recipes[0]
+		if (recipe.id == searchID) {
+			if ((idx + 1) == recipes.length) {
+				returnRecipe = recipes[0];
 			} else {
-				returnRecipe = recipes[idx+1]
+				returnRecipe = recipes[idx + 1];
 			}
 		}
-		return returnRecipe
+		return returnRecipe;
 	});
 
 	return returnRecipe;
@@ -31,14 +31,14 @@ export function getPreviousRecipe(searchID) {
 	let returnRecipe = {};
 
 	recipes.filter((recipe, idx) => {
-		if(recipe.id==searchID) {
-			if(idx==0) {
-				returnRecipe =  recipes[recipes.length-1]
+		if (recipe.id == searchID) {
+			if (idx == 0) {
+				returnRecipe = recipes[recipes.length - 1];
 			} else {
-				returnRecipe = recipes[idx-1]
+				returnRecipe = recipes[idx - 1];
 			}
 		}
-		return returnRecipe
+		return returnRecipe;
 	});
 
 	return returnRecipe;

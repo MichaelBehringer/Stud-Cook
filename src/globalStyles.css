@@ -108,7 +108,7 @@ body{
 }
 
 .addCommentButton {
-  text-align: center;
+  float: right;
 }
 
 .searchButton {
@@ -123,4 +123,11 @@ body{
 
 .marginTopButtonTemp{
   margin-top: 5px;
+}
+
+.commentInputStyle {
+  height: 32px;
+  width: -webkit-calc(100% - 205px);
+  width:    -moz-calc(100% - 205px);
+  width:         calc(100% - 205px);
 }
