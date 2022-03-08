@@ -1,5 +1,5 @@
 .footer {
-	position:absolute;
+	position:fixed;
 	left:0;
 	bottom:0;
 	right:0;
@@ -11,7 +11,7 @@
 }
 
 .footerContainer {
-	padding-bottom:20px;
+	padding-bottom:80px;
 	text-align: center;
 }
 
