@@ -87,6 +87,22 @@ body{
   color: white;
 }
 
+.colorThemeDeleteButton{
+  background-color: white; 
+  color: black; 
+  border: 2px solid #e2683c;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 8px 16px;
+  float:right;
+}
+
+.colorThemeDeleteButton:hover{
+  background-color: #e2683c;
+  color: white;
+}
+
 .shareButtons {
   float: right;
 }
@@ -103,4 +119,8 @@ body{
 
 .textJustify {
   text-align: justify;
+}
+
+.marginTopButtonTemp{
+  margin-top: 5px;
 }
