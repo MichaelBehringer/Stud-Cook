@@ -10,6 +10,11 @@ function pdfGenerate(inputText){
   doc.save("Einkaufsliste.pdf")
 }
 
+function getEmail() {
+  let emailInput = prompt("Email eingeben")
+  console.log(emailInput)
+}
+
 function ShoppingList() {
   let pdfInt=[]
   var recipes = require('../data/Recipes.json');
@@ -25,7 +30,6 @@ function ShoppingList() {
             {recipes.map((recipe) => {
               if (JSON.parse(stringShoppingList).shoppingList.includes(recipe.id)) {
                 recipe.ingredients.map((ing) => pdfInt.push(ing.name + ' ' + ing.amounth + ing.scale))
-                console.log(pdfInt)
                 return recipe.ingredients.map((ing) => <li className="listForInt" key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li>)
               }})}
 
@@ -37,7 +41,8 @@ function ShoppingList() {
         </div>
       }
       <div>
-        <button className="colorThemeButton marginTopButtonTemp" onClick={() => pdfGenerate(pdfInt.join('\n'))}>Einkaufsliste als PDF herunterladen</button>
+        <button className="colorThemeButton marginTopButtonTemp" onClick={() => pdfGenerate(pdfInt.join('\n'))}>Einkaufsliste als PDF herunterladen ↓</button>
+        <button className="colorThemeButton" onClick={() => getEmail()}>PDF per Mail erhalten</button>
       </div>
     </div>
   );
