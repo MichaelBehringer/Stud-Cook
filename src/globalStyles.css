@@ -77,15 +77,30 @@ body{
   padding: 8px 16px;
 }
 
-.addToShoppingListButton {
-  margin-bottom: 13px;
-}
-
-
 .colorThemeButton:hover {
   background-color: #66921B;
   color: white;
 }
+
+.invertedColorThemeButton {
+    background-color: #66921B; 
+    color: white; 
+    border: 2px solid white;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+.invertedColorThemeButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.addToShoppingListButton {
+  margin-bottom: 13px;
+}
+
 
 .colorThemeDeleteButton{
   background-color: white; 
@@ -130,4 +145,8 @@ body{
   width: -webkit-calc(100% - 205px);
   width:    -moz-calc(100% - 205px);
   width:         calc(100% - 205px);
+}
+
+body::-webkit-scrollbar {
+  width: 5em;
 }

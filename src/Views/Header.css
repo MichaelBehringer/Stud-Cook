@@ -65,7 +65,7 @@
   color: #A9C45E;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 750px) {
   .header {
     grid-template-areas: "logo burger" "nav nav";
   }

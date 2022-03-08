@@ -1,0 +1,25 @@
+.footer {
+	position:absolute;
+	left:0;
+	bottom:0;
+	right:0;
+	width: 100%;
+	background-color: #66921B;
+	color:white;
+	padding-bottom: 5px;
+	padding-top: 3px;
+}
+
+.footerContainer {
+	padding-bottom:20px;
+	text-align: center;
+}
+
+.footerText {
+	color: white;
+  font-size: 20px;
+  font-weight: 500;
+  transition: 0.5s;
+  text-decoration: none;
+  cursor: pointer;
+}
