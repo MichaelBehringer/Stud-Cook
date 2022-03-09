@@ -1,8 +1,8 @@
 import React from "react";
 import './App.css';
-import './globalStyles.css'
+import './globalStyles.css';
 
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom';
 
 import DetailView from "./Views/DetailView";
 import Home from "./Views/Home";

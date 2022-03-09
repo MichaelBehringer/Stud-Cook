@@ -5,6 +5,7 @@
   padding: 2px 16px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom:5%;
 }
 
 .cardMain {
@@ -16,6 +17,7 @@
   flex-wrap: wrap;
   margin-bottom: 30px;
 }
+
 
 .foodIMG {
   display: block;
@@ -47,15 +49,82 @@
   margin-top: 10px;
 }
 
-.recipePic{
-  display: block;
-  max-width:300px;
-  width: 100%;
-  height: auto;
-  margin-right: 25px;
-  margin-left: 25px;
-}
 
 body{
   background-image: cross-fade();
+}
+
+.comments{
+  margin-left: 5%;
+  margin-right: 5%;
+  border-bottom: 2px solid gainsboro;
+}
+
+.addComment{
+  margin-right:5%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+  height: 30px;
+
+
+}
+
+#buttonAddComment{
+  height:100%;
+  width: 24%;
+  background-color: #66921B;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  margin-left: 5%;
+}
+
+.inputComment{
+  height: 100%;
+  width: 70%;
+}
+
+
+.recipeContainer{
+  flex-wrap: wrap;
+  width: 100%;
+  height:auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+}
+
+react-slideshow-container {
+  width: 100%;
+  height: auto;
+}
+
+.box .zoomIMG{
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.box{
+  position: relative;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.box .imgCaption{
+  position: absolute;
+  z-index: 5;
+  height: 20%;
+  bottom: 0;
+  right: 0;
+  left: 5%;
+  width: 100%; /* Set the width of the positioned div */
+  padding-top: 6%;
+
+  background:linear-gradient(rgba(128, 128, 128, 0), 35%, rgba(102, 101, 101, 0.925));
+  color: white;
+}
+
+.nav{
+  margin-left: 5%;
 }
