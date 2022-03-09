@@ -42,13 +42,13 @@ function ShoppingList() {
       }
       <div>
         <button className="colorThemeButton marginTopButtonTemp" onClick={() => pdfGenerate(pdfInt.join('\n'))}>Einkaufsliste als PDF herunterladen ↓</button>
-        <button className="colorThemeButton" onClick={() => email += getEmail()}>PDF per Mail erhalten</button>
-        <button className="colorThemeButton" onClick={() => console.log(email)}>logEmail</button>
-      </div>
-      <div>
-        <form action={email} method="POST">
+       
+
+        <form action='https://formsubmit.co/paulbrilmayer@gmail.com' method="POST">
           <input type="hidden" name="_subject" value="Einkaufsliste"></input>
-          <input type="hidden" name="text" value={pdfInt.join('\n')}></input>
+          <input type="email" name="email" placeholder="Email Addresse"></input>
+          <input type="hidden" name="_autoresponse" value={"Hier ist deine einkaufsliste" + pdfInt.join('\n')}></input>
+          <input type="hidden" name="Einkaufsliste" value={pdfInt.join('\n')}></input>
           <button type="submit">Send</button>
         </form> 
       </div>
