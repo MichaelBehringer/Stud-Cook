@@ -1,20 +1,33 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, p, a, span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}
+
+code {
+  font-family: Consolas;
+}
+
 .card {
+  padding: 1px 16px;
+  margin: 0 auto 1% auto;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: white;
   transition: 0.3s;
   border-radius: 5px;
-  padding: 2px 16px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom:5%;
-  background-color: white;
 }
 
 .cardMain {
   width: 80%;
-  margin-bottom: 25px;
 }
+
 .cardComment {
   padding: 8px 16px;
+  margin-bottom: 1%;
 }
 
 .flex-container {
@@ -48,11 +61,11 @@
 }
 
 .backButton{
+  float: right;
+  margin-top: 10px;
   background-color: white;
   border: none;
   font-size: 30px;
-  margin-top: 10px;
-  float: right;
 }
 
 
@@ -61,18 +74,13 @@ body{
 }
 
 .comments{
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 0 5%;
   border-bottom: 2px solid gainsboro;
 }
 
 .addComment{
-  margin-right:5%;
-  margin-left: 5%;
-  margin-bottom: 3%;
+  margin: 0 5% 3% 5%;
   height: 30px;
-
-
 }
 
 #buttonAddComment{
@@ -93,11 +101,9 @@ body{
 
 .recipeContainer{
   flex-wrap: wrap;
-  width: 100%;
+  width: 90%;
   height:auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 5%;
+  margin: 0 auto 5% auto;
 }
 
 react-slideshow-container {
@@ -109,6 +115,7 @@ react-slideshow-container {
   width: 100%;
   height: 400px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .box{
@@ -152,13 +159,13 @@ react-slideshow-container {
 }
 
 .invertedColorThemeButton {
-    background-color: #66921B; 
-    color: white; 
-    border: 2px solid white;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 4px;
-    padding: 8px 16px;
+  background-color: #66921B; 
+  color: white; 
+  border: 2px solid white;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 8px 16px;
 }
 
 .invertedColorThemeButton:hover {
@@ -196,13 +203,13 @@ react-slideshow-container {
 }
 
 .searchButton {
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin: 0 20px 20px 0;
   width: 120px;
 }
 
 .textJustify {
   text-align: justify;
+  padding-right: 50px;
 }
 
 .marginTopButtonTemp{
@@ -223,4 +230,23 @@ body::-webkit-scrollbar {
 .linkStyle {
   text-decoration: none;
   color: black;
+}
+
+.listForInt{
+  padding: 0.5%;
+  background: #A9C45E;
+  color: black;
+  opacity: 50%;
+  margin: 1%;
+  list-style-position: inside;
+}
+
+.backForListForInt{
+  background: #66921B;
+  padding: 0.01%;
+}
+
+td{
+  padding-right: 30px;
+  padding-top: 2px;
 }

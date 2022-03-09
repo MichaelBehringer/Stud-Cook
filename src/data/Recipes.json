@@ -4,21 +4,21 @@
         "name":"Schnitzel",
         "duration":60,
         "ingredients":[
-            {"name":"Oberschale vom Schwein parniert", "amounth": 200, "scale": "g"},
+            {"name":"Oberschale vom Schwein paniert", "amounth": 200, "scale": "g"},
             {"name":"Pommes", "amounth": 200, "scale": "g"},
             {"name":"Butterschmalz", "amounth": 2, "scale": "EL"},
             {"name":"Zitrone", "amounth": 1, "scale": "Stück"}
         ],
         "image": "Schnitzel.jpg",
         "process": [
-            "Pommes in den Oven schieben", 
+            "Pommes in den Ofen schieben.", 
             "In einer ausreichend großen Pfanne Butterschmalz erhitzen und die Schnitzel von beiden Seiten darin jeweils 1 Minute kräftig anbraten. Hitze reduzieren und weitere 5 Minuten bei wenig Temperatur ziehen lassen.",
             "Mit Pommes und weiteren Beilagen auf Teller verteilen und sofort servieren."
         ]
     },
     {
         "id": 1,
-        "name":"Spagetti Bolognese",
+        "name":"Spaghetti Bolognese",
         "duration":30,
         "ingredients":[
             {"name":"Spaghetti", "amounth": 100, "scale": "g"},
@@ -29,11 +29,11 @@
         ],
         "image": "Spagetti.jpg",
         "process": [
-            "Die Zwiebel schälen und klein würfelig schneiden",
-            "Danach reichlich Salz-Wasser aufkochen die Nudeln darin weichkochen (=al dente) und anschließend durch ein Sieb abgießen",
+            "Die Zwiebel schälen und in kleine Würfel schneiden.",
+            "Danach reichlich Salz-Wasser aufkochen die Nudeln darin weichkochen (=al dente) und anschließend durch ein Sieb abgießen.",
             "In der Zwischenzeit das Öl in einem Topf erhitzen und darin die Zwiebel für 4 Minuten dünsten.",
-            "Nun das Hackfleisch beimengen und kurz durchbraten. Tomatensauce hinzufügen und die Flüssigkeit etwas reduzieren lassen. Den Deckel auf den Topf und bei kleiner Hitze gut 40-50 Minuten köcheln lassen.",
-            "Die gekochten Spagetti appetitlich auf Tellern anrichten, die Sauce darüber geben"
+            "Nun das Hackfleisch beimengen und kurz durchbraten. Tomatensauce hinzufügen und die Flüssigkeit etwas reduzieren lassen. Den Deckel auf den Topf geben und bei kleiner Hitze gut 40-50 Minuten köcheln lassen.",
+            "Die gekochten Spaghetti auf einem Teller anrichten, die Sauce darüber geben."
         ]
     },
     {
@@ -50,10 +50,10 @@
         ],
         "image": "StrammerMax.jpg",
         "process": [
-            "Die Butter in einer Pfanne leicht anbräunen, die Brotscheiben hinein legen und beidseitig kurz anbraten. Alternativ die Brotscheiben einfach mit der weichen Butter bestreichen", 
-            "Ohne Fett in einer beschichteten Pfanne die Schinkenscheiben kross braten", 
-            "Tomaten und Gewürzgurken größenabhängig entweder halbieren oder in Scheiben schneiden", 
-            "Die Eier als Spiegeleier braten und dabei mit Pfeffer und Salz würzen. Optional kann auch noch etwas geriebener Käse darauf gegeben werden",
+            "Die Butter in einer Pfanne leicht anbräunen, die Brotscheiben hinein legen und beidseitig kurz anbraten. Alternativ die Brotscheiben einfach mit der weichen Butter bestreichen.", 
+            "Ohne Fett in einer beschichteten Pfanne die Schinkenscheiben kross braten.", 
+            "Tomaten und Gewürzgurken größenabhängig entweder halbieren oder in Scheiben schneiden.", 
+            "Die Eier als Spiegeleier braten und dabei mit Pfeffer und Salz würzen. Optional kann auch noch etwas geriebener Käse darauf gegeben werden.",
             "Die gerösteten Brotscheiben mit dem Schinken belegen, Gurken und Tomaten darauf verteilen und die Spiegeleier darauf setzen. Sofort servieren!"
         ]
     },
@@ -69,7 +69,7 @@
         ],
         "image": "Gyros.jpg",
         "process": [
-            "Eine Zwiebel in halbe Ringe schneiden. Eine Auflaufform bereitstellen, den Ofen auf 180 °C Ober-/Unterhitze vorheizen",
+            "Eine Zwiebel in halbe Ringe schneiden. Eine Auflaufform bereitstellen, den Ofen auf 180 °C Ober-/Unterhitze vorheizen.",
             "Nun ein Minutensteak mit ca. 1 TL der Gewürzmasse bestreichen, ein paar Zwiebelringe und das nächste Minutensteak mit Gewürzpaste und Zwiebeln drauf. Die oberste Scheibe nur noch mit Öl einreiben, nicht mehr mit Gewürz bestreichen, da es sonst anbrennt. Nun für 30 - 40 min. in den heißen Ofen schieben",
             "Pommes in den Oven schieben",
             "Wenn das Fleisch soweit durch (d. h. nicht mehr rosa) ist, aus dem Ofen nehmen und noch fünf Minuten ruhen lassen. Dann mit einem scharfen Messer und einer Hilfsgabel in kleine Stücke schneiden. So reicht es für ein bis zwei Tage"
@@ -81,7 +81,7 @@
         "duration":20,
         "ingredients":[
             {"name":"Reis", "amounth": 90, "scale": "g"},
-            {"name":"Hänchengeschnätzeltes", "amounth": 100, "scale": "g"},
+            {"name":"Hähnchengeschnetzeltes", "amounth": 100, "scale": "g"},
             {"name":"Knoblauchzehe", "amounth": 1, "scale": "Stück"},
             {"name":"Champignons", "amounth": 100, "scale": "g"},
             {"name":"Tomatenmark", "amounth": 1, "scale": "EL"}

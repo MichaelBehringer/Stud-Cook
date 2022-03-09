@@ -16,7 +16,7 @@ function Contact() {
         <p><input type="email" id="email" name="email" placeholder="max@mustermail.de" required="required" /></p> 
         </p> 
         <p>
-              <label for="telefon">Telefon: </label>
+        <label for="telefon">Telefon: </label>
         <p><input type="tel" id="telefon" name="telefon" placeholder="+49123456789"/> </p> 
         </p> 
         <p>
