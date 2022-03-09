@@ -22,4 +22,6 @@
   transition: 0.5s;
   text-decoration: none;
   cursor: pointer;
+  background-color: rgba(0,0,0,0);
+  border: none;
 }

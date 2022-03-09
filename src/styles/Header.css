@@ -26,20 +26,22 @@
   margin-right: 5%;
 }
 
-.nav span {
+.nav button {
   color: #66921B;
   font-size: 20px;
   font-weight: 500;
   transition: 0.5s;
   text-decoration: none;
   cursor: pointer;
+  background-color: rgba(0,0,0,0);
+  border: none;
 }
 
 .nav a:hover {
   transform: scale(1.1);
 }
 
-.nav span:hover{
+.nav button:hover{
   color: #A9C45E;
 }
 
@@ -79,6 +81,7 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
+
   .burgerButton {
     display: inline;
   }
