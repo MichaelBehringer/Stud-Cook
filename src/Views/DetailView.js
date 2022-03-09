@@ -60,6 +60,9 @@ function DetailView() {
         <button onClick={() => toggleWriteComment(recipeID, comments, setComments)} className="colorThemeButton addCommentButton">✎ Kommentar schreiben</button>
         {comments ? generateCommentArray(comments).map((entry) => <p className="card cardComment textJustify" key={entry[0]}>{entry[1]}</p>) : <p>Keine Kommentare vorhanden</p>}
       </div>
+
+      <button onClick={() => navigate('/detail/' + getNextRecipe(recipeID).id)} className="paginationButton paginationButtonNext">&#62;</button>
+      <button onClick={() => navigate('/detail/' + getPreviousRecipe(recipeID).id)} className="paginationButton">&#60;</button>
     </div>
   );
 }
