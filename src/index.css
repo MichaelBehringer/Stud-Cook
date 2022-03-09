@@ -5,6 +5,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button, p, a, span {
+  font-family: 'Segoe UI'
+}
+
 code {
   font-family: Consolas;
 }
