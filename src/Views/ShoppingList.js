@@ -1,3 +1,5 @@
+/* eslint array-callback-return: 0 */
+
 import React from "react";
 import jsPDF from "jspdf"
 import logo from "../images/name.png"
@@ -7,11 +9,6 @@ function pdfGenerate(inputText){
   doc.addImage(logo, "PNG", 0, 0, 100, 20);
   doc.text(inputText, 10, 30)
   doc.save("Einkaufsliste.pdf")
-}
-
-function getEmail() {
-  let emailInput = prompt("Email eingeben")
-  return emailInput
 }
 
 function ShoppingList() {
@@ -27,7 +24,7 @@ function ShoppingList() {
         <div>
           <ul>
             {recipes.map((recipe) => {
-              if (JSON.parse(stringShoppingList).shoppingList.includes(recipe.id)) {
+                if (JSON.parse(stringShoppingList).shoppingList.includes(recipe.id)) {
                 recipe.ingredients.map((ing) => pdfInt.push(ing.name + ' ' + ing.amounth + ing.scale))
                 return recipe.ingredients.map((ing) => <li className="listForInt" key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li>)
               }})}
