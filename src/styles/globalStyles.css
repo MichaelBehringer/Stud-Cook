@@ -27,13 +27,12 @@ code {
 
 .cardComment {
   padding: 8px 16px;
-  margin-bottom: 1%;
+  margin-bottom: 8px;
 }
 
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 30px;
 }
 
 
@@ -61,11 +60,13 @@ code {
 }
 
 .backButton{
-  float: right;
-  margin-top: 10px;
   background-color: white;
-  border: none;
-  font-size: 30px;
+  cursor: pointer;
+  margin-left: 3px;
+}
+
+.backButtonContainer {
+  display: flex;
 }
 
 
@@ -210,7 +211,7 @@ react-slideshow-container {
 
 .textJustify {
   text-align: justify;
-  padding-right: 50px;
+  overflow-wrap: break-word;
 }
 
 .marginTopButtonTemp{
@@ -252,7 +253,16 @@ table .listForInt{
   padding: 10px 0 10px 10px;
 }
 
-.ingTable td{
+.tdIngName {
+  padding-top: 2px;
+}
+
+.tdIngScale {
+  padding-right: 30px;
+  padding-top: 2px;
+}
+
+.ingTable {
   padding-right: 30px;
   padding-top: 2px;
 }
@@ -317,4 +327,13 @@ a:hover {
 
 .blockerSmall {
   height: 12px;
+}
+
+.recipeName {
+  display: flex;
+  align-items: center;
+  
+  /* Remove the next line if you want the span to appear next to the h1 */
+  justify-content: space-between;
+  
 }
