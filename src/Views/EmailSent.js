@@ -6,7 +6,7 @@ function EmailSent() {
     <div>
       <div className="card cardMain">
         <h1>Email Gesendet!</h1>
-        <h2><a href="/home">Zurück zum Homebildschirm</a></h2>
+        <h2><a href="/~gruppe4ai21">Zurück zum Homebildschirm</a></h2>
         <div className="recipeContainer">
             <ImageSlider/>
         </div>
