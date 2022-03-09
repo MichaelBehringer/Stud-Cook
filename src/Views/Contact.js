@@ -1,7 +1,8 @@
 import React from "react";
+import "../styles/Contact.css";
 
 function Contact() {
-  return (
+  return (/*
     <div>
       <div className="card cardMain">
         <h1>Kontakt</h1>
@@ -25,12 +26,53 @@ function Contact() {
         </p> 
         <button className="colorThemeButton marginTopButtonTemp" input type="reset">Zurücksetzen</button>
         <button className="colorThemeButton marginTopButtonTemp" input type="submit" value="Senden" id="submit-button" >Senden</button>
-        <p id="req-field-desc"><span class="required">*</span> benötigte Felder</p>
+        <p id="req-field-desc"><span class="required">*</span> benötigte Felder</p>*/
+ 
+<section class="contact-wrap">
+  <form action="" class="contact-form">
+    <div class="col-sm-6">
+      <div class="input-block">
+        <label for="">Vorname</label>
+        <input type="text" class="form-control"/>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-block">
+        <label for="">Nachname</label>
+        <input type="text" class="form-control"/>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="input-block">
+        <label for="">E-Mail</label>
+        <input type="text" class="form-control"/>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="input-block">
+        <label for="">Betreff</label>
+        <input type="text" class="form-control"/>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="input-block textarea">
+        <label for="">Schreiben Sie hier Ihre Nachricht</label>
+        <textarea rows="3" type="text" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <button class="square-button">Senden</button>
+    </div>
+  </form>
+</section>
+
+/*
         </form>
         </div>
       </div>
-    </div>
+    </div>*/
   );
+  
 }
 
 export default Contact;
