@@ -39,7 +39,7 @@ function DetailView() {
         <WhatsappShareButton className="shareButtons" url={window.location.href}>
           <WhatsappIcon size={35} round={true} />
         </WhatsappShareButton>
-        <EmailShareButton className="shareButtons" url={window.location.href}>
+        <EmailShareButton subject="Leckeres Rezept" className="shareButtons" url={window.location.href}>
           <EmailIcon size={35} round={true} />
         </EmailShareButton>
       </div>
