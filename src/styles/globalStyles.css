@@ -1,3 +1,18 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, p, a, span {
+  font-family: 'Segoe UI'
+}
+
+code {
+  font-family: Consolas;
+}
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -224,4 +239,18 @@ body::-webkit-scrollbar {
 .linkStyle {
   text-decoration: none;
   color: black;
+}
+
+.listForInt{
+  padding: 0.5%;
+  background: #A9C45E;
+  color: black;
+  opacity: 50%;
+  margin: 1%;
+  list-style-position: inside;
+}
+
+.backForListForInt{
+    background: #66921B;
+    padding: 0.01%;
 }
