@@ -348,8 +348,7 @@ a:hover {
   left: -10px;
   overflow: hidden;
   width: 40px;
-  height: 40px;
-  padding-bottom: 3px;
+  height: 50px;
   font-size: 20px;
   background-color: white; 
   color: black; 
@@ -362,4 +361,5 @@ a:hover {
 .paginationButtonNext {
   right: -10px;
   left: unset;
+  padding-left: 6px;
 }
