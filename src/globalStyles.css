@@ -6,10 +6,15 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom:5%;
+  background-color: white;
 }
 
 .cardMain {
   width: 80%;
+  margin-bottom: 25px;
+}
+.cardComment {
+  padding: 8px 16px;
 }
 
 .flex-container {
@@ -47,6 +52,7 @@
   border: none;
   font-size: 30px;
   margin-top: 10px;
+  float: right;
 }
 
 
@@ -127,4 +133,94 @@ react-slideshow-container {
 
 .nav{
   margin-left: 5%;
+}
+
+
+.colorThemeButton {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #66921B;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
+.colorThemeButton:hover {
+  background-color: #66921B;
+  color: white;
+}
+
+.invertedColorThemeButton {
+    background-color: #66921B; 
+    color: white; 
+    border: 2px solid white;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+.invertedColorThemeButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.addToShoppingListButton {
+  margin-bottom: 13px;
+}
+
+
+.colorThemeDeleteButton{
+  background-color: white; 
+  color: black; 
+  border: 2px solid #e2683c;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 8px 16px;
+  float:right;
+}
+
+.colorThemeDeleteButton:hover{
+  background-color: #e2683c;
+  color: white;
+}
+
+.shareButtons {
+  float: right;
+}
+
+.addCommentButton {
+  float: right;
+}
+
+.searchButton {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 120px;
+}
+
+.textJustify {
+  text-align: justify;
+}
+
+.marginTopButtonTemp{
+  margin-top: 5px;
+}
+
+.commentInputStyle {
+  height: 32px;
+  width: -webkit-calc(100% - 205px);
+  width:    -moz-calc(100% - 205px);
+  width:         calc(100% - 205px);
+}
+
+body::-webkit-scrollbar {
+  width: 5em;
+}
+
+.linkStyle {
+  text-decoration: none;
+  color: black;
 }

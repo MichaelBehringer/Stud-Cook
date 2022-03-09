@@ -8,7 +8,7 @@ function Search() {
     <div>
       <div className="card cardMain">
         <h1>Suche</h1>
-        {recipes.map((recipe) => <button key={recipe.id} onClick={() => navigate('/detail/' + recipe.id)}>{recipe.name}</button>)}
+        {recipes.map((recipe) => <button className="colorThemeButton searchButton" key={recipe.id} onClick={() => navigate('/detail/' + recipe.id)}>{recipe.name}</button>)}
       </div>
     </div>
   );

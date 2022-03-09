@@ -1,42 +1,37 @@
 import React from "react";
 import "./ShoppingList.css";
+import jsPDF from "jspdf"
+import logo from "../images/name.png"
 
-function download(filename, text) {
-  var pom = document.createElement('a');
-  pom.setAttribute('href', 'data:text/plain;charset=utf-8,' +
+function pdfGenerate(inputText){
+  var doc = new jsPDF("portrait")
+  doc.addImage(logo, "PNG", 0, 0, 100, 20);
+  doc.text(inputText, 10, 30)
+  doc.save("Einkaufsliste.pdf")
+}
 
-    encodeURIComponent(text));
-  pom.setAttribute('download', filename);
-
-  pom.style.display = 'none';
-  document.body.appendChild(pom);
-
-  pom.click();
-
-  document.body.removeChild(pom);
+function getEmail() {
+  let emailInput = prompt("Email eingeben")
+  console.log(emailInput)
 }
 
 function ShoppingList() {
+  let pdfInt=[]
   var recipes = require('../data/Recipes.json');
   const [, updateState] = React.useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
   let stringShoppingList = localStorage.getItem('shoppingList')
   return (
     <div className="card cardMain">
-      <h1>Einkaufsliste</h1>
+      <h1>Einkaufsliste<button className="colorThemeDeleteButton" onClick={() => { localStorage.removeItem('shoppingList'); forceUpdate() }}>Einkaufsliste löschen 🗑</button></h1>
       {stringShoppingList ?
         <div>
           <ul>
-            {recipes.map((recipe) =>
-              {
-                if (JSON.parse(stringShoppingList).shoppingList.includes(recipe.id)) {
-                  return recipe.ingredients.map((ing) => <div className="backForListForInt"> <li className="listForInt" key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li></div>)
-                
-                }
-                
-              }
-            )
-            }
+            {recipes.map((recipe) => {
+              if (JSON.parse(stringShoppingList).shoppingList.includes(recipe.id)) {
+                recipe.ingredients.map((ing) => pdfInt.push(ing.name + ' ' + ing.amounth + ing.scale))
+                return recipe.ingredients.map((ing) => <li className="listForInt" key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li>)
+              }})}
 
           </ul>
         </div>
@@ -45,10 +40,13 @@ function ShoppingList() {
           <h1>Einkaufsliste ist leer</h1>
         </div>
       }
-      <button className="prettybutton" onClick={() => { localStorage.removeItem('shoppingList'); forceUpdate() }}>Einkaufsliste leeren</button>
-
+      <div>
+        <button className="colorThemeButton marginTopButtonTemp" onClick={() => pdfGenerate(pdfInt.join('\n'))}>Einkaufsliste als PDF herunterladen ↓</button>
+        <button className="colorThemeButton" onClick={() => getEmail()}>PDF per Mail erhalten</button>
+      </div>
     </div>
   );
 }
+
 
 export default ShoppingList;

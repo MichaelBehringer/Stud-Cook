@@ -11,10 +11,18 @@ import Header from "./Views/Header";
 import Contact from "./Views/Contact";
 import Impressum from "./Views/Impressum";
 import ShoppingList from "./Views/ShoppingList";
+import Footer from "./Views/Footer";
+
+const backgroundImageStyle = {
+  backgroundImage: 'linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("backgroundImage.jpg")',
+  height:'100vh',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'
+}
 
 function App() {
   return (
-    <div className="mainStyle App">
+    <div style={backgroundImageStyle} className="mainStyle App">
       <Header />
       <div className='Content'>
       <Routes>
@@ -27,6 +35,7 @@ function App() {
         <Route path="*" element={<Home/>}/>
       </Routes>
       </div>
+      <Footer />
     </div>
   );
 }
