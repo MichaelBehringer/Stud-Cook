@@ -44,6 +44,8 @@ function DetailView() {
         </EmailShareButton>
       </div>
 
+      <div className="blockerSmall" />
+
       <div className="card cardMain">
         <h1>Kommentare:</h1>
         <input id="inputComment" className="commentInputStyle"></input>

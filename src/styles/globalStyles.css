@@ -314,3 +314,7 @@ a {
 a:hover {
   background-color: lightgrey;
 }
+
+.blockerSmall {
+  height: 12px;
+}
