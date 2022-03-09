@@ -16,15 +16,15 @@ function Contact() {
         <p><input type="email" id="email" name="email" placeholder="max@mustermail.de" required="required" /></p> 
         </p> 
         <p>
-              <label for="telefon">Telefon: </label>
+        <label for="telefon">Telefon: </label>
         <p><input type="tel" id="telefon" name="telefon" placeholder="+49123456789"/> </p> 
         </p> 
         <p>
         <label for="message">Nachricht: <span class="required">*</span></label>
         <p><textarea id="message" name="message" placeholder="Ihre Nachricht muss mindestens 10 Zeichen enthalten" required="required" data-minlength="10"></textarea></p> 
-        </p>
-        <input type="reset"></input>
-        <input type="submit" value="Senden" id="submit-button" />
+        </p> 
+        <button className="colorThemeButton marginTopButtonTemp" input type="reset">Zurücksetzen</button>
+        <button className="colorThemeButton marginTopButtonTemp" input type="submit" value="Senden" id="submit-button" >Senden</button>
         <p id="req-field-desc"><span class="required">*</span> benötigte Felder</p>
         </form>
         </div>
