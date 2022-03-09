@@ -214,6 +214,7 @@ react-slideshow-container {
 
 .marginTopButtonTemp{
   margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .commentInputStyle {
@@ -233,21 +234,24 @@ body::-webkit-scrollbar {
   color: black;
 }
 
-.listForInt{
-  padding: 0.5%;
-  background: #A9C45E;
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 3%;
+}
+
+table .listForInt{
+  width: 100%;
   color: black;
-  opacity: 50%;
-  margin: 1%;
-  list-style-position: inside;
 }
 
-.backForListForInt{
-  background: #66921B;
-  padding: 0.01%;
+.listForInt:nth-child(even) {background: #a9c45e94}
+
+.listForInt td{
+  padding: 10px 0 10px 10px;
 }
 
-td{
+.ingTable td{
   padding-right: 30px;
   padding-top: 2px;
 }

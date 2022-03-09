@@ -27,7 +27,7 @@ function DetailView() {
           <img className="foodIMG" alt={recipe.name} src={require('../images/' + recipe.image)} />
           <div>
             <h2>Zutaten</h2>
-            <table>
+            <table className="ingTable">
               {recipe.ingredients.map((ing) => <tr key={ing.name} message={ing.name} >{<><td>{ing.amounth + ' ' + ing.scale}</td><td>{ing.name}</td></>}</tr>)}
             </table>
             <h2>Zubereitungszeit</h2><p>{recipe.duration} Minuten</p>

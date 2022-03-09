@@ -22,18 +22,18 @@ function ShoppingList() {
       <h1>Einkaufsliste<button className="colorThemeDeleteButton" onClick={() => { localStorage.removeItem('shoppingList'); forceUpdate() }}>Einkaufsliste löschen 🗑</button></h1>
       {stringShoppingList ?
         <div>
-          <ul>
+          <table>
             {recipes.map((recipe) => {
                 if (JSON.parse(stringShoppingList).shoppingList.includes(recipe.id)) {
-                recipe.ingredients.map((ing) => pdfInt.push(ing.name + ' ' + ing.amounth + ing.scale))
-                return recipe.ingredients.map((ing) => <li className="listForInt" key={ing.name} message={ing.name} >{ing.name + ' ' + ing.amounth + ing.scale}</li>)
+                recipe.ingredients.map((ing) => pdfInt.push(ing.amounth + ing.scale+' '+ing.name))
+                return recipe.ingredients.map((ing) => <tr className="listForInt" key={ing.name} message={ing.name} >{<><td>{ing.amounth + ' ' + ing.scale}</td><td>{ing.name}</td></>}</tr>)
               }})}
 
-          </ul>
+          </table>
         </div>
         :
         <div>
-          <h1>Einkaufsliste ist leer</h1>
+          <h2>Einkaufsliste ist leer</h2>
         </div>
       }
       <div>
