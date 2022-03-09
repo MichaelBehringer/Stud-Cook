@@ -217,6 +217,7 @@ react-slideshow-container {
 }
 
 .commentInputStyle {
+  margin-bottom: 10px;
   height: 32px;
   width: -webkit-calc(100% - 205px);
   width:    -moz-calc(100% - 205px);

@@ -28,7 +28,7 @@ function DetailView() {
           <div>
             <h2>Zutaten</h2>
             <table>
-              {recipe.ingredients.map((ing) => <tr key={ing.name} message={ing.name} >{<><td>{ing.amounth}</td><td>{ing.scale}</td><td>{ing.name}</td></>}</tr>)}
+              {recipe.ingredients.map((ing) => <tr key={ing.name} message={ing.name} >{<><td>{ing.amounth + ' ' + ing.scale}</td><td>{ing.name}</td></>}</tr>)}
             </table>
             <h2>Zubereitungszeit</h2><p>{recipe.duration} Minuten</p>
           </div>
@@ -39,7 +39,7 @@ function DetailView() {
         <WhatsappShareButton className="shareButtons" url={window.location.href}>
           <WhatsappIcon size={35} round={true} />
         </WhatsappShareButton>
-        <EmailShareButton className="shareButtons" url={window.location.href}>
+        <EmailShareButton subject="Leckeres Rezept" className="shareButtons" url={window.location.href}>
           <EmailIcon size={35} round={true} />
         </EmailShareButton>
       </div>

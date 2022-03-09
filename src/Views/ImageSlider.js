@@ -14,7 +14,7 @@ const ImageSlider = () => {
     <div className="slide-container">
       <Slide {...slideProps}>
        {SliderData.map((slideImage, index)=> (
-         <div className='box'>
+         <div key={index} className='box'>
           <img key={index} className="zoomIMG" src={require('../images/' + slideImage.url)} onClick={() => navigate('/detail/' + slideImage.id)}/>
           <div className="imgCaption">{slideImage.caption}</div>
          </div>
