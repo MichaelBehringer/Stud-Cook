@@ -23,8 +23,8 @@ function Contact() {
         <label for="message">Nachricht: <span class="required">*</span></label>
         <p><textarea id="message" name="message" placeholder="Ihre Nachricht muss mindestens 10 Zeichen enthalten" required="required" data-minlength="10"></textarea></p> 
         </p> 
-        <input type="reset"></input>
-        <input type="submit" value="Senden" id="submit-button" />
+        <button className="colorThemeButton marginTopButtonTemp" input type="reset">Zurücksetzen</button>
+        <button className="colorThemeButton marginTopButtonTemp" input type="submit" value="Senden" id="submit-button" >Senden</button>
         <p id="req-field-desc"><span class="required">*</span> benötigte Felder</p>
         </form>
         </div>
