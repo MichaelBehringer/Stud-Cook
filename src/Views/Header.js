@@ -47,7 +47,6 @@ export default function Header() {
           <span onClick={() => {navigate('/search'); toggleNav()}}>Suche</span>
           <span onClick={() => {navigate('/shoppingList'); toggleNav()}}>Einkaufsliste</span>
           <span onClick={() => {navigate('/contact'); toggleNav()}}>Kontakt</span>
-          <span onClick={() => {navigate('/impressum'); toggleNav()}}>Datenschutz und Impressum</span>
         </nav>
       </CSSTransition>
       <button onClick={toggleNav} className="burgerButton">
