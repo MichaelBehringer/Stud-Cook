@@ -5,7 +5,8 @@ import 'react-slideshow-image/dist/styles.css';
 import {useNavigate } from 'react-router-dom';
 
 const slideProps={
-  indicators: true
+  indicators: true,
+  duration: 3000
 }
 
 const ImageSlider = () => {

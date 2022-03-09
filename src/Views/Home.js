@@ -5,8 +5,7 @@ function Home() {
   return (
     <div>
       <div className="card cardMain">
-        <h1>Willkommen!</h1>
-        <h2>Top-Rezepte der Woche</h2>
+        <h1>Top-Rezepte der Woche</h1>
         <div className="recipeContainer">
             <ImageSlider/>
         </div>
