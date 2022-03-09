@@ -1,13 +1,12 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI';
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 button, p, a, span {
-  font-family: 'Segoe UI'
-}
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}
 
 code {
   font-family: Consolas;
@@ -116,6 +115,7 @@ react-slideshow-container {
   width: 100%;
   height: 400px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .box{
@@ -217,6 +217,7 @@ react-slideshow-container {
 }
 
 .commentInputStyle {
+  margin-bottom: 10px;
   height: 32px;
   width: -webkit-calc(100% - 205px);
   width:    -moz-calc(100% - 205px);
