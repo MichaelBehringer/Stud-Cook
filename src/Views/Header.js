@@ -43,10 +43,10 @@ export default function Header() {
         unmountOnExit
       >
         <nav className="nav">
-          <span onClick={() => {navigate('/'); toggleNav()}}>Home</span>
-          <span onClick={() => {navigate('/search'); toggleNav()}}>Suche</span>
-          <span onClick={() => {navigate('/shoppingList'); toggleNav()}}>Einkaufsliste</span>
-          <span onClick={() => {navigate('/contact'); toggleNav()}}>Kontakt</span>
+          <button onClick={() => {navigate('/'); toggleNav()}}>Home</button>
+          <button onClick={() => {navigate('/search'); toggleNav()}}>Suche</button>
+          <button onClick={() => {navigate('/shoppingList'); toggleNav()}}>Einkaufsliste</button>
+          <button onClick={() => {navigate('/contact'); toggleNav()}}>Kontakt</button>
         </nav>
       </CSSTransition>
       <button onClick={toggleNav} className="burgerButton">

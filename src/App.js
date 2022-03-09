@@ -13,7 +13,7 @@ import Footer from "./Views/Footer";
 import EmailSent from "./Views/EmailSent";
 
 const backgroundImageStyle = {
-  backgroundImage: 'linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("backgroundImage.jpg")',
+  backgroundImage: 'linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("backgroundImage.jpg")',
   height:'100vh',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'

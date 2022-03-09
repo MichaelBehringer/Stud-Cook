@@ -8,7 +8,7 @@ function Footer() {
   return (
     <div className="footerContainer">
       <div className="footer">
-          <span className="footerText" onClick={() => {navigate('/impressum')}}>Impressum/Datenschutz</span>
+          <button className="footerText" onClick={() => {navigate('/impressum')}}>Impressum/Datenschutz</button>
       </div>
     </div>
   );

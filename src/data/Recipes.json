@@ -4,7 +4,7 @@
         "name":"Schnitzel",
         "duration":60,
         "ingredients":[
-            {"name":"Oberschale vom Schwein paniert", "amounth": 200, "scale": "g"},
+            {"name":"Oberschale vom Schwein", "amounth": 200, "scale": "g"},
             {"name":"Pommes", "amounth": 200, "scale": "g"},
             {"name":"Butterschmalz", "amounth": 2, "scale": "EL"},
             {"name":"Zitrone", "amounth": 1, "scale": "Stück"}

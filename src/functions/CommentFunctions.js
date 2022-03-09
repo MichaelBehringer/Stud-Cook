@@ -1,3 +1,4 @@
+import {toast} from "react-toastify";
 import {addComment} from "./Firebase";
 
 function sortFunction(a, b) {
@@ -21,16 +22,22 @@ export function generateCommentArray(comments) {
 
 export function toggleWriteComment(recipeID, comments, setComments) {
 	const enteredComment = document.getElementById("inputComment").value
-	if (enteredComment === null) {
-		return;
+	if(!isBlank(enteredComment)) {
+		saveComment(recipeID, comments, setComments, enteredComment);
+		document.getElementById("inputComment").value = ''
+		toast.success('Erfolgreich gespeichert', { position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined});
+	} else {
+		toast.warn('Keine Eingabe!', { position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined});
 	}
-	saveComment(recipeID, comments, setComments, enteredComment);
-	document.getElementById("inputComment").value = ''
-}
 
+}
 
 function saveComment(recipeID, comments, setComments, comment) {
 	const newID = Date.now();
 	addComment(recipeID, comment, newID);
 	setComments({...comments, [newID]: comment});
+}
+
+function isBlank(str) {
+	return (!str || /^\s*$/.test(str));
 }

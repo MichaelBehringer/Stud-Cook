@@ -6,6 +6,8 @@ import {generateCommentArray, toggleWriteComment} from "../functions/CommentFunc
 import {readComment} from "../functions/Firebase";
 import {addToLocalStorage} from "../functions/LocalStorage";
 import {getNextRecipe, getPreviousRecipe, getRecipeForID} from "../functions/RecipesFunctions";
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function DetailView() {
   const [comments, setComments] = useState({});
@@ -19,17 +21,23 @@ function DetailView() {
 
   return (
     <div>
+      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
+
       <div className="card cardMain">
-        <button className="backButton" onClick={() => navigate('/detail/' + getNextRecipe(recipeID).id)}>&#62;</button>
-        <button className="backButton" onClick={() => navigate('/detail/' + getPreviousRecipe(recipeID).id)}>&#60;</button>
-        <h1>{recipe.name}</h1>
+        <div className="recipeName">
+          <h1>{recipe.name}</h1>
+          <div className="backButtonContainer">
+            <h1 className="backButton" onClick={() => navigate('/detail/' + getPreviousRecipe(recipeID).id)}>&#60;</h1>
+            <h1 className="backButton" onClick={() => navigate('/detail/' + getNextRecipe(recipeID).id)}>&#62;</h1>
+          </div></div>
+
         <div className="flex-container">
           <img className="foodIMG" alt={recipe.name} src={require('../images/' + recipe.image)} />
           <div>
             <h2>Zutaten</h2>
-            <table>
-              {recipe.ingredients.map((ing) => <tr key={ing.name} message={ing.name} >{<><td>{ing.amounth + ' ' + ing.scale}</td><td>{ing.name}</td></>}</tr>)}
-            </table>
+            <table className="ingTable"><tbody>
+              {recipe.ingredients.map((ing) => <tr key={ing.name} message={ing.name} >{<><td className="tdIngScale">{ing.amounth + ' ' + ing.scale}</td><td className="tdIngName">{ing.name}</td></>}</tr>)}
+            </tbody></table>
             <h2>Zubereitungszeit</h2><p>{recipe.duration} Minuten</p>
           </div>
         </div>
@@ -44,12 +52,17 @@ function DetailView() {
         </EmailShareButton>
       </div>
 
+      <div className="blockerSmall" />
+
       <div className="card cardMain">
         <h1>Kommentare:</h1>
         <input id="inputComment" className="commentInputStyle"></input>
         <button onClick={() => toggleWriteComment(recipeID, comments, setComments)} className="colorThemeButton addCommentButton">✎ Kommentar schreiben</button>
         {comments ? generateCommentArray(comments).map((entry) => <p className="card cardComment textJustify" key={entry[0]}>{entry[1]}</p>) : <p>Keine Kommentare vorhanden</p>}
       </div>
+
+      <button onClick={() => navigate('/detail/' + getNextRecipe(recipeID).id)} className="paginationButton paginationButtonNext">&#62;</button>
+      <button onClick={() => navigate('/detail/' + getPreviousRecipe(recipeID).id)} className="paginationButton">&#60;</button>
     </div>
   );
 }
