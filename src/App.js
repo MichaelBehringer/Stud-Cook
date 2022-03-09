@@ -10,6 +10,7 @@ import Contact from "./Views/Contact";
 import Impressum from "./Views/Impressum";
 import ShoppingList from "./Views/ShoppingList";
 import Footer from "./Views/Footer";
+import EmailSent from "./Views/EmailSent";
 
 const backgroundImageStyle = {
   backgroundImage: 'linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("backgroundImage.jpg")',
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/search" element={<Search/>}/>
         <Route exact path="/shoppingList" element={<ShoppingList/>}/>
+        <Route exact path="/emailSent" element={<EmailSent/>}/>
         <Route exact path="/contact" element={<Contact/>}/>
         <Route exact path="/impressum" element={<Impressum/>}/>
         <Route exact path="/detail/:recipeID" element={<DetailView/>}/>
