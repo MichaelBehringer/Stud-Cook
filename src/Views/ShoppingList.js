@@ -1,5 +1,4 @@
 import React from "react";
-import "./ShoppingList.css";
 import jsPDF from "jspdf"
 import logo from "../images/name.png"
 

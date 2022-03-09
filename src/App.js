@@ -1,8 +1,6 @@
 import React from "react";
-import './App.css';
-import './globalStyles.css'
 
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom';
 
 import DetailView from "./Views/DetailView";
 import Home from "./Views/Home";
@@ -11,6 +9,7 @@ import Header from "./Views/Header";
 import Contact from "./Views/Contact";
 import Impressum from "./Views/Impressum";
 import ShoppingList from "./Views/ShoppingList";
+import Footer from "./Views/Footer";
 
 const backgroundImageStyle = {
   backgroundImage: 'linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("backgroundImage.jpg")',
@@ -34,6 +33,7 @@ function App() {
         <Route path="*" element={<Home/>}/>
       </Routes>
       </div>
+      <Footer />
     </div>
   );
 }
