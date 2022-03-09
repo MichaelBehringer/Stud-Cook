@@ -149,3 +149,8 @@ body{
 body::-webkit-scrollbar {
   width: 5em;
 }
+
+.linkStyle {
+  text-decoration: none;
+  color: black;
+}
