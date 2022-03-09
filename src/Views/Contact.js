@@ -29,39 +29,40 @@ function Contact() {
         <p id="req-field-desc"><span class="required">*</span> benötigte Felder</p>*/
  
 <section class="contact-wrap">
-  <form action="" class="contact-form">
+  <form action="https://formsubmit.co/stud.cook.dhbw@gmail.com" class="contact-form" method="POST">
+  <input type="hidden" name="_next" value="https://ai.tillh.de/~gruppe4ai21/#/emailSent"></input>
     <div class="col-sm-6">
       <div class="input-block">
-        <label for="">Vorname</label>
-        <input type="text" class="form-control"/>
+        <label for=""></label>
+        <input placeholder="Vorname" type="text" class="form-control"/>
       </div>
     </div>
     <div class="col-sm-6">
       <div class="input-block">
-        <label for="">Nachname</label>
-        <input type="text" class="form-control"/>
+        <label for=""></label>
+        <input placeholder="Nachname" type="text" class="form-control"/>
       </div>
     </div>
     <div class="col-sm-12">
       <div class="input-block">
-        <label for="">E-Mail</label>
-        <input type="text" class="form-control"/>
+        <label for=""></label>
+        <input placeholder="E-Mail" type="email" class="form-control"/>
       </div>
     </div>
     <div class="col-sm-12">
       <div class="input-block">
-        <label for="">Betreff</label>
-        <input type="text" class="form-control"/>
+        <label for=""></label>
+        <input placeholder="Betreff" type="text" class="form-control"/>
       </div>
     </div>
     <div class="col-sm-12">
       <div class="input-block textarea">
-        <label for="">Schreiben Sie hier Ihre Nachricht</label>
-        <textarea rows="3" type="text" class="form-control"></textarea>
+        <label for=""></label>
+        <textarea placeholder="Ihre Nachricht" rows="3" type="text" class="form-control"></textarea>
       </div>
     </div>
     <div class="col-sm-12">
-      <button class="square-button">Senden</button>
+      <button class="square-button" input type="submit" id="submit-button">Senden</button>
     </div>
   </form>
 </section>
