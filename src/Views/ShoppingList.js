@@ -41,7 +41,7 @@ function ShoppingList() {
         
         <form action="https://formsubmit.co/stud.cook.dhbw@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="Einkaufsliste"></input>
-          <input type="hidden" name="_next" value="https://ai.tillh.de/~gruppe4ai21/#/emailSent"></input>
+          <input type="hidden" name="_next" value={window.location.href.replace('shoppingList', 'emailSent')}></input>
           <input type="hidden" name="_template" value="box"></input>
           <button className="colorThemeButton marginTopButtonTemp" type="submit">Einkaufsliste per Email erhalten</button> <br></br>
           <input className="colorThemeButton marginTopButtonTemp" type="email" name="email" placeholder="Email Addresse eingeben" required></input>
