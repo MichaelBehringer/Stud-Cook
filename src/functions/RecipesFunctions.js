@@ -43,3 +43,20 @@ export function getPreviousRecipe(searchID) {
 
 	return returnRecipe;
 }
+
+export function orderRecipesByName(recipes) {
+	recipes.sort(sortFunction);
+	return recipes;
+}
+
+function compareStrings(a, b) {
+  a = a.toLowerCase();
+  b = b.toLowerCase();
+
+  return (a < b) ? -1 : (a > b) ? 1 : 0;
+}
+
+
+function sortFunction(a, b) {
+	return compareStrings(a.name, b.name);
+}

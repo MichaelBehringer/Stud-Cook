@@ -2,6 +2,7 @@ import React from "react";
 import {useNavigate } from 'react-router-dom';
 import SearchData from '../data/Recipes.json';
 import {useState} from 'react';
+import {orderRecipesByName} from "../functions/RecipesFunctions";
 
 
 function Search() {
@@ -14,7 +15,7 @@ function Search() {
 }
 
 function SearchBar({ placeholder, data }) {
-  const [filteredData, setFilteredData] = useState(data);
+  const [filteredData, setFilteredData] = useState(orderRecipesByName(data));
   const [wordEntered, setWordEntered] = useState("");
   const navigate = useNavigate();
   let searchWord;
@@ -27,7 +28,7 @@ function SearchBar({ placeholder, data }) {
         return value.name.toLowerCase().includes(searchWord.toLowerCase());
     });
 
-    setFilteredData(newFilter);
+    setFilteredData(orderRecipesByName(newFilter));
   };
 
   return (

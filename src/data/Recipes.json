@@ -1,24 +1,4 @@
 [
-    
-    {
-        "id": 4,
-        "name":"Currypfanne",
-        "duration":20,
-        "ingredients":[
-            {"name":"Reis", "amounth": 90, "scale": "g"},
-            {"name":"Hähnchengeschnetzeltes", "amounth": 100, "scale": "g"},
-            {"name":"Knoblauchzehe", "amounth": 1, "scale": "Stück"},
-            {"name":"Champignons", "amounth": 100, "scale": "g"},
-            {"name":"Tomatenmark", "amounth": 1, "scale": "EL"}
-        ],
-        "image": "Currypfanne.jpg",
-        "process": [
-            "Den Reis gemäß der Packungsangabe in einem Topf garen",
-            "In einer Pfanne das Hähnchengeschnetzelte anbraten. Die gehackten Zwiebeln, die gehackten Knoblauchzehen sowie die geviertelten Champignons dazugeben und anschwitzen. Ggf. einen Deckel auf die Pfanne geben und das Fleisch mit dem Gemüse ein paar Minuten dünsten, bis der Reis fertig ist.",
-            "Das Tomatenmark in die ausgetretene Flüssigkeit rühren und den Reis unterheben. Das Gericht mit ordentlich Currypulver abschmecken",
-            "Das Gericht schmeckt natürlich auch mit vielen weiteren Gemüsesorten, die man noch so da hat."
-        ]
-    },
     {
         "id": 0,
         "name":"Schnitzel",
@@ -93,6 +73,25 @@
             "Nun ein Minutensteak mit ca. 1 TL der Gewürzmasse bestreichen, ein paar Zwiebelringe und das nächste Minutensteak mit Gewürzpaste und Zwiebeln drauf. Die oberste Scheibe nur noch mit Öl einreiben, nicht mehr mit Gewürz bestreichen, da es sonst anbrennt. Nun für 30 - 40 min. in den heißen Ofen schieben",
             "Pommes in den Oven schieben",
             "Wenn das Fleisch soweit durch (d. h. nicht mehr rosa) ist, aus dem Ofen nehmen und noch fünf Minuten ruhen lassen. Dann mit einem scharfen Messer und einer Hilfsgabel in kleine Stücke schneiden. So reicht es für ein bis zwei Tage"
+        ]
+    },
+    {
+        "id": 4,
+        "name":"Currypfanne",
+        "duration":20,
+        "ingredients":[
+            {"name":"Reis", "amounth": 90, "scale": "g"},
+            {"name":"Hähnchengeschnetzeltes", "amounth": 100, "scale": "g"},
+            {"name":"Knoblauchzehe", "amounth": 1, "scale": "Stück"},
+            {"name":"Champignons", "amounth": 100, "scale": "g"},
+            {"name":"Tomatenmark", "amounth": 1, "scale": "EL"}
+        ],
+        "image": "Currypfanne.jpg",
+        "process": [
+            "Den Reis gemäß der Packungsangabe in einem Topf garen",
+            "In einer Pfanne das Hähnchengeschnetzelte anbraten. Die gehackten Zwiebeln, die gehackten Knoblauchzehen sowie die geviertelten Champignons dazugeben und anschwitzen. Ggf. einen Deckel auf die Pfanne geben und das Fleisch mit dem Gemüse ein paar Minuten dünsten, bis der Reis fertig ist.",
+            "Das Tomatenmark in die ausgetretene Flüssigkeit rühren und den Reis unterheben. Das Gericht mit ordentlich Currypulver abschmecken",
+            "Das Gericht schmeckt natürlich auch mit vielen weiteren Gemüsesorten, die man noch so da hat."
         ]
     }
 ]
