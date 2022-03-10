@@ -6,7 +6,7 @@ import {useState} from 'react';
 
 function Search() {
   return (
-    <div className="card cardMain">
+    <div className="card cardMain searchCard">
       <h1>Suche</h1>
       <SearchBar placeholder="Suchbegriff eingeben.." data={SearchData} />
     </div>
@@ -37,9 +37,9 @@ function SearchBar({ placeholder, data }) {
       </div> 
       {
         <div>
-          {filteredData.slice(0, 15).map((recipe) => {
+          {filteredData.slice(0, 15).map((recipe, idx) => {
             return (
-              <div className="flexContainer" onClick={() => navigate('/detail/' + recipe.id)}>
+              <div key={idx} className="flexContainer" onClick={() => navigate('/detail/' + recipe.id)}>
               <img className="recipePic" alt={recipe.name} src={ require('../images/' + recipe.image) } />
               <div className="recipeDescription">
                 <h2>{recipe.name}</h2>

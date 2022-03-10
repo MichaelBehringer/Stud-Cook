@@ -22,14 +22,14 @@ function ShoppingList() {
       <h1>Einkaufsliste<button className="colorThemeDeleteButton" onClick={() => { localStorage.removeItem('shoppingList'); forceUpdate() }}>Einkaufsliste löschen 🗑</button></h1>
       {stringShoppingList ?
         <div>
-          <table>
+          <table><tbody>
             {recipes.map((recipe) => {
                 if (JSON.parse(stringShoppingList).shoppingList.includes(recipe.id)) {
                 recipe.ingredients.map((ing) => pdfInt.push(ing.amounth + ing.scale+' '+ing.name))
                 return recipe.ingredients.map((ing) => <tr className="listForInt" key={ing.name} message={ing.name} >{<><td>{ing.amounth + ' ' + ing.scale}</td><td>{ing.name}</td></>}</tr>)
               }})}
 
-          </table>
+          </tbody></table>
         </div>
         :
         <div>

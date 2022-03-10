@@ -30,6 +30,10 @@ code {
   margin-bottom: 8px;
 }
 
+.searchCard {
+  padding-bottom: 10px;
+}
+
 .flexContainer {
   width: 100% - 5px;
   border: solid 2px #EDF0F4;
@@ -37,6 +41,7 @@ code {
   display: flex;
   margin: 1% 5px 1% 0;
   padding: 5px 0 5px 5px;
+  cursor: pointer;
 }
 
 .flex-container {
