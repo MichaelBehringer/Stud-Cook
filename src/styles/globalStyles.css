@@ -39,6 +39,13 @@ code {
   padding: 5px 0 5px 5px;
 }
 
+.flex-container {
+  width: 100% ;
+  flex-wrap: wrap;
+  display: flex;
+}
+  
+
 .recipePic{
   width: 20%;
   height: auto;
