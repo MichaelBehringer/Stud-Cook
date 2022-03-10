@@ -29,7 +29,7 @@ function Contact() {
         <p id="req-field-desc"><span class="required">*</span> benötigte Felder</p>*/
  
 <section class="contact-wrap">
-<h1>Kontaktformular</h1>
+<h3>Kontaktformular</h3>
   <form action="https://formsubmit.co/stud.cook.dhbw@gmail.com" class="contact-form" method="POST">
   <input type="hidden" name="_next" value="https://ai.tillh.de/~gruppe4ai21/#/emailSent"></input>
     <div class="col-sm-6">
