@@ -6,7 +6,8 @@ import {useNavigate } from 'react-router-dom';
 
 const slideProps={
   indicators: true,
-  duration: 3000
+  duration: 3000,
+  arrows: false
 }
 
 const ImageSlider = () => {
