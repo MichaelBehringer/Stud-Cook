@@ -6,62 +6,54 @@ import {useState} from 'react';
 
 function Search() {
   return (
-    <div className="App">
-      <SearchBar placeholder="Search..." data={SearchData} />
+    <div className="card cardMain">
+      <h1>Suche</h1>
+      <SearchBar placeholder="Suchbegriff eingeben.." data={SearchData} />
     </div>
   );
 }
 
-
 function SearchBar({ placeholder, data }) {
-  const [filteredData, setFilteredData] = useState([]);
+  const [filteredData, setFilteredData] = useState(data);
   const [wordEntered, setWordEntered] = useState("");
   const navigate = useNavigate();
-  let recipes = require('../data/Recipes.json');
+  let searchWord;
 
   const handleFilter = (event) => {
-    const searchWord = event.target.value;
+    searchWord = event.target.value;
     setWordEntered(searchWord);
+
     const newFilter = data.filter((value) => {
-      return value.name.toLowerCase().includes(searchWord.toLowerCase());
+        return value.name.toLowerCase().includes(searchWord.toLowerCase());
     });
 
-    if (searchWord === "") {
-      setFilteredData([]);
-    } else {
-      setFilteredData(newFilter);
-    }
-  };
-
-  const clearInput = () => {
-    setFilteredData([]);
-    setWordEntered("");
+    setFilteredData(newFilter);
   };
 
   return (
     <div className="search">
       <div className="searchInputs">
-        <input
-          type="text"
-          placeholder={placeholder}
-          value={wordEntered}
-          onChange={handleFilter}
-        />
-        
-      </div>
-      {filteredData.length != 0 && (
-        <div className="dataResult">
-          {filteredData.slice(0, 15).map((value, key) => {
+        <input type="text"  placeholder={placeholder} value={wordEntered} onChange={handleFilter}/>
+      </div> 
+      {
+        <div>
+          {filteredData.slice(0, 15).map((recipe) => {
             return (
-              <a className="dataItem" key={value.id} onClick={() => navigate('/detail/' + value.id)}>
-                <p>{value.name} </p>
-              </a>
+              <div className="flexContainer" onClick={() => navigate('/detail/' + recipe.id)}>
+              <img className="recipePic" alt={recipe.name} src={ require('../images/' + recipe.image) } />
+              <div className="recipeDescription">
+                <h2>{recipe.name}</h2>
+                <p>Zubereitungszeit: {recipe.duration} Minuten</p>
+              </div>
+              </div>
             );
           })}
+
+
         </div>
-      )}
-      {recipes.map((recipe) => <button className="colorThemeButton searchButton" key={recipe.id} onClick={() => navigate('/detail/' + recipe.id)}>{recipe.name}</button>)}
+      }
     </div>
   );
 }
+
 export default Search;
