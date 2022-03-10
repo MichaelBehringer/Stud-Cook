@@ -1,18 +1,20 @@
-import React from "react";
-import ImageSlider from "./ImageSlider";
+import React, {useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
+import {toast} from "react-toastify";
 
 function EmailSent() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    toast.success('Erfolgreich gesendet', { position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined});
+    navigate('/');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+ 
   return (
     <div>
-      <div className="card cardMain">
-        <h1>Email Gesendet!</h1>
-        <h2><a onClick={() => navigate("/")}>Zurück zum Homebildschirm</a></h2>
-        <div className="recipeContainer">
-            <ImageSlider/>
-        </div>
-      </div>
+     
     </div>
   );
 }

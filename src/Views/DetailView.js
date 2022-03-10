@@ -6,7 +6,6 @@ import {generateCommentArray, toggleWriteComment} from "../functions/CommentFunc
 import {readComment} from "../functions/Firebase";
 import {addToLocalStorage} from "../functions/LocalStorage";
 import {getNextRecipe, getPreviousRecipe, getRecipeForID} from "../functions/RecipesFunctions";
-import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function DetailView() {
@@ -21,8 +20,6 @@ function DetailView() {
 
   return (
     <div>
-      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
-
       <div className="card cardMain">
         <div className="recipeName">
           <h1>{recipe.name}</h1>
