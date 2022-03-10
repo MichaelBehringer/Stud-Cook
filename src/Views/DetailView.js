@@ -26,10 +26,7 @@ function DetailView() {
       <div className="card cardMain">
         <div className="recipeName">
           <h1>{recipe.name}</h1>
-          <div className="backButtonContainer">
-            <h1 className="backButton" onClick={() => navigate('/detail/' + getPreviousRecipe(recipeID).id)}>&#60;</h1>
-            <h1 className="backButton" onClick={() => navigate('/detail/' + getNextRecipe(recipeID).id)}>&#62;</h1>
-          </div></div>
+        </div>
 
         <div className="flex-container">
           <img className="foodIMG" alt={recipe.name} src={require('../images/' + recipe.image)} />
