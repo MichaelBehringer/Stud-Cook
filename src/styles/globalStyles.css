@@ -470,7 +470,7 @@ a:hover {
 }
 .contact-form .square-button:hover, .contact-form .square-button:focus {
   background-color: #66921B;
-  color: #f8d751;
+  color: white;
 }
 
 /*----page styles---*/
