@@ -11,3 +11,22 @@ export function addToLocalStorage(recipeID) {
   }
   toast.success('Erfolgreich hinzugefügt', { position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined});
 }
+
+export function getSavedApiState() {
+  let apiState = localStorage.getItem('apiState');
+  if(apiState) {
+    return JSON.parse(apiState).apiState;
+  } else {
+    localStorage.setItem("apiState", JSON.stringify({'apiState': false}));
+    return false;
+  }
+}
+
+export function toggleSavedApiState() {
+  let apiState = localStorage.getItem('apiState');
+  if(apiState) {
+    localStorage.setItem("apiState", JSON.stringify({'apiState': !JSON.parse(apiState).apiState}));
+  } else {
+    localStorage.setItem("apiState", JSON.stringify({'apiState': false}));
+  }
+}

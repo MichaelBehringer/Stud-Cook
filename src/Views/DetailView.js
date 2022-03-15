@@ -5,20 +5,31 @@ import {EmailIcon, EmailShareButton, WhatsappIcon, WhatsappShareButton} from "re
 import {generateCommentArray, toggleWriteComment} from "../functions/CommentFunctions";
 import {readComment} from "../functions/Firebase";
 import {addToLocalStorage} from "../functions/LocalStorage";
-import {getNextRecipe, getPreviousRecipe, getRecipeForID} from "../functions/RecipesFunctions";
+import {convertApiRecipeToStudyCookFormat, getNextRecipe, getPreviousRecipe, getRecipeForID} from "../functions/RecipesFunctions";
 import 'react-toastify/dist/ReactToastify.css';
 
-function DetailView() {
+function DetailView(props) {
+	const axios = require('axios').default;
   const [comments, setComments] = useState({});
   const navigate = useNavigate();
   const {recipeID} = useParams();
-  var recipe = getRecipeForID(recipeID);
+  const [recipe, setRecipse] = useState(null);
+
+
 
   useEffect(() => {
     readComment(recipeID).then(comm => setComments(comm));
+    if(props.isApiActive) {
+      axios.get('https://www.themealdb.com/api/json/v1/1/random.php').then(function (response) {
+        setRecipse(convertApiRecipeToStudyCookFormat(response))
+      })
+    } else {
+      setRecipse(getRecipeForID(recipeID))
+    }
+    
   }, [recipeID]);
 
-  return (
+  return (recipe == null ? <div></div> :
     <div>
       <div className="card cardMain">
         <div className="recipeName">
@@ -26,13 +37,13 @@ function DetailView() {
         </div>
 
         <div className="flex-container">
-          <img className="foodIMG" alt={recipe.name} src={require('../images/' + recipe.image)} />
+          <img className="foodIMG" alt={recipe.name} src={props.isApiActive ? recipe.image : require( '../images/' + recipe.image)} />
           <div>
             <h2>Zutaten</h2>
             <table className="ingTable"><tbody>
               {recipe.ingredients.map((ing) => <tr key={ing.name} message={ing.name} >{<><td className="tdIngScale">{ing.amounth + ' ' + ing.scale}</td><td className="tdIngName">{ing.name}</td></>}</tr>)}
             </tbody></table>
-            <h2>Zubereitungszeit</h2><p>{recipe.duration} Minuten</p>
+            {!props.isApiActive ? <><h2>Zubereitungszeit</h2><p>{recipe.duration} Minuten</p></> : <> </>}
           </div>
         </div>
         <h2>Zubereitung</h2>
