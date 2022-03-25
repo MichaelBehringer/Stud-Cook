@@ -5,28 +5,20 @@ import {EmailIcon, EmailShareButton, WhatsappIcon, WhatsappShareButton} from "re
 import {generateCommentArray, toggleWriteComment} from "../functions/CommentFunctions";
 import {readComment} from "../functions/Firebase";
 import {addToLocalStorage} from "../functions/LocalStorage";
-import {convertApiRecipeToStudyCookFormat, getNextRecipe, getPreviousRecipe, getRecipeForID} from "../functions/RecipesFunctions";
+import {convertApiRecipeToStudyCookFormat} from "../functions/RecipesFunctions";
 import 'react-toastify/dist/ReactToastify.css';
+import {getRandomRecipe, getSpecificRecipe} from "../functions/MealDbFunctions";
 
-function DetailView(props) {
-	const axios = require('axios').default;
+function DetailView() {
   const [comments, setComments] = useState({});
   const navigate = useNavigate();
   const {recipeID} = useParams();
   const [recipe, setRecipse] = useState(null);
 
-
-
   useEffect(() => {
     readComment(recipeID).then(comm => setComments(comm));
-    if(props.isApiActive) {
-      axios.get('https://www.themealdb.com/api/json/v1/1/random.php').then(function (response) {
-        setRecipse(convertApiRecipeToStudyCookFormat(response))
-      })
-    } else {
-      setRecipse(getRecipeForID(recipeID))
-    }
-    
+    getSpecificRecipe(recipeID).then(res => setRecipse(convertApiRecipeToStudyCookFormat(res)))
+      
   }, [recipeID]);
 
   return (recipe == null ? <div></div> :
@@ -37,13 +29,12 @@ function DetailView(props) {
         </div>
 
         <div className="flex-container">
-          <img className="foodIMG" alt={recipe.name} src={props.isApiActive ? recipe.image : require( '../images/' + recipe.image)} />
+          <img className="foodIMG" alt={recipe.name} src={recipe.image} />
           <div>
             <h2>Zutaten</h2>
             <table className="ingTable"><tbody>
-              {recipe.ingredients.map((ing) => <tr key={ing.name} message={ing.name} >{<><td className="tdIngScale">{ing.amounth + ' ' + ing.scale}</td><td className="tdIngName">{ing.name}</td></>}</tr>)}
+              {recipe.ingredients.map((ing, idx) => <tr key={idx} message={ing.name} >{<><td className="tdIngScale">{ing.amounth + ' ' + ing.scale}</td><td className="tdIngName">{ing.name}</td></>}</tr>)}
             </tbody></table>
-            {!props.isApiActive ? <><h2>Zubereitungszeit</h2><p>{recipe.duration} Minuten</p></> : <> </>}
           </div>
         </div>
         <h2>Zubereitung</h2>
@@ -66,8 +57,8 @@ function DetailView(props) {
         {comments ? generateCommentArray(comments).map((entry) => <p className="card cardComment textJustify" key={entry[0]}>{entry[1]}</p>) : <p>Keine Kommentare vorhanden</p>}
       </div>
 
-      <button onClick={() => navigate('/detail/' + getNextRecipe(recipeID).id)} className="paginationButton paginationButtonNext">&#62;</button>
-      <button onClick={() => navigate('/detail/' + getPreviousRecipe(recipeID).id)} className="paginationButton">&#60;</button>
+      <button onClick={() => getRandomRecipe().then(recipe => navigate('/detail/' + recipe.idMeal))} className="paginationButton paginationButtonNext">&#62;</button>
+      <button onClick={() => getRandomRecipe().then(recipe => navigate('/detail/' + recipe.idMeal))} className="paginationButton">&#60;</button>
     </div>
   );
 }

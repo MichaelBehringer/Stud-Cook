@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useNavigate } from 'react-router-dom';
 import SearchData from '../data/Recipes.json';
 import {useState} from 'react';
 import {orderRecipesByName} from "../functions/RecipesFunctions";
+import {getContainingRecipes, getStartingRecipes} from "../functions/MealDbFunctions";
+import {isBlank} from "../functions/CommentFunctions";
 
 
 function Search() {
@@ -15,20 +17,30 @@ function Search() {
 }
 
 function SearchBar({ placeholder, data }) {
-  const [filteredData, setFilteredData] = useState(orderRecipesByName(data));
+  const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
+  const [defaultRecipes, setDefaultRecipes] = useState([]);
   const navigate = useNavigate();
   let searchWord;
+
+  useEffect(() => {
+    const prom1 = getStartingRecipes('a')
+    const prom2 = getStartingRecipes('b')
+  
+    Promise.all([prom1, prom2]).then((values) => {
+      setDefaultRecipes(values[0].concat(values[1]))
+      setFilteredData(values[0].concat(values[1]))
+    });
+  }, []);
+
 
   const handleFilter = (event) => {
     searchWord = event.target.value;
     setWordEntered(searchWord);
 
-    const newFilter = data.filter((value) => {
-        return value.name.toLowerCase().includes(searchWord.toLowerCase());
-    });
-
-    setFilteredData(orderRecipesByName(newFilter));
+    if(!isBlank(searchWord)) {
+      getContainingRecipes(searchWord).then(recipes => setFilteredData(recipes ? orderRecipesByName(recipes) : []))
+    }
   };
 
   return (
@@ -38,13 +50,14 @@ function SearchBar({ placeholder, data }) {
       </div> 
       {
         <div>
-          {filteredData.slice(0, 15).map((recipe, idx) => {
+          {(isBlank(wordEntered) ? defaultRecipes : filteredData).slice(0, 15).map((recipe, idx) => {
             return (
-              <div key={idx} className="flexContainer" onClick={() => navigate('/detail/' + recipe.id)}>
-              <img className="recipePic" alt={recipe.name} src={ require('../images/' + recipe.image) } />
+              <div key={idx} className="flexContainer" onClick={() => navigate('/detail/' + recipe.idMeal)}>
+              <img className="recipePic" alt={recipe.strMeal} src={recipe.strMealThumb} />
               <div className="recipeDescription">
-                <h2>{recipe.name}</h2>
-                <p>Zubereitungszeit: {recipe.duration} Minuten</p>
+                <h2>{recipe.strMeal}</h2>
+                <p>Kathegorie: {recipe.strCategory}</p>
+                <p>Herkunft: {recipe.strArea}</p>
               </div>
               </div>
             );

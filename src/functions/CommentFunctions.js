@@ -38,6 +38,6 @@ function saveComment(recipeID, comments, setComments, comment) {
 	setComments({...comments, [newID]: comment});
 }
 
-function isBlank(str) {
+export function isBlank(str) {
 	return (!str || /^\s*$/.test(str));
 }

@@ -23,11 +23,14 @@ function ShoppingList() {
       {stringShoppingList ?
         <div>
           <table><tbody>
-            {recipes.map((recipe) => {
+            {/*recipes.map((recipe) => {
                 if (JSON.parse(stringShoppingList).shoppingList.includes(recipe.id)) {
                 recipe.ingredients.map((ing) => pdfInt.push(ing.amounth + ing.scale+' '+ing.name))
                 return recipe.ingredients.map((ing) => <tr className="listForInt" key={ing.name} message={ing.name} >{<><td>{ing.amounth + ' ' + ing.scale}</td><td>{ing.name}</td></>}</tr>)
-              }})}
+              }})*/}
+              {
+                'todo ^^'
+              }
 
           </tbody></table>
         </div>

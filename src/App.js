@@ -12,7 +12,6 @@ import ShoppingList from "./Views/ShoppingList";
 import Footer from "./Views/Footer";
 import EmailSent from "./Views/EmailSent";
 import {ToastContainer} from "react-toastify";
-import {getSavedApiState, toggleSavedApiState} from "./functions/LocalStorage";
 
 const backgroundImageStyle = {
   backgroundImage: 'linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("backgroundImage.jpg")',
@@ -21,31 +20,20 @@ const backgroundImageStyle = {
   backgroundRepeat: 'no-repeat'
 }
 
-function handleReactSwitch(setIsApiActive) {
-  toggleSavedApiState();
-  setIsApiActive(getSavedApiState());
-}
-
 function App() {
-  const [isApiActive, setIsApiActive] = useState(getSavedApiState());
-
-  useEffect(() => {
-
-  }, []);
-
   return (
     <div style={backgroundImageStyle} className="mainStyle App">
       <Header />
       <div className='Content'>
       <Routes>
-        <Route exact path="/" element={<Home isApiActive={isApiActive} setIsApiActive={setIsApiActive} handleReactSwitch={handleReactSwitch}/>}/>
+        <Route exact path="/" element={<Home/>}/>
         <Route exact path="/search" element={<Search/>}/>
         <Route exact path="/shoppingList" element={<ShoppingList/>}/>
         <Route exact path="/emailSent" element={<EmailSent/>}/>
         <Route exact path="/contact" element={<Contact/>}/>
         <Route exact path="/impressum" element={<Impressum/>}/>
-        <Route exact path="/detail/:recipeID" element={<DetailView isApiActive={isApiActive}/>}/>
-        <Route path="*" element={<Home isApiActive={isApiActive} setIsApiActive={setIsApiActive} handleReactSwitch={handleReactSwitch}/>}/>
+        <Route exact path="/detail/:recipeID" element={<DetailView/>}/>
+        <Route path="*" element={<Home/>}/>
       </Routes>
       </div>
       <Footer/>
