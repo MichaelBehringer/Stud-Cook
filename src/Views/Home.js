@@ -5,7 +5,7 @@ function Home(props) {
   return (
     <div>
       <div className="card cardMain">
-        <h1>Top-Rezepte der Woche</h1>
+        <h1>StudyCook Empfehlungen:</h1>
         <div className="recipeContainer">
           <ImageSlider />
         </div>

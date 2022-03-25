@@ -30,16 +30,16 @@ function DetailView() {
 
         <div className="flex-container">
           <img className="foodIMG" alt={recipe.name} src={recipe.image} />
-          <div>
+          <div className="card cardIngrediences">
             <h2>Zutaten</h2>
             <table className="ingTable"><tbody>
-              {recipe.ingredients.map((ing, idx) => <tr key={idx} message={ing.name} >{<><td className="tdIngScale">{ing.amounth + ' ' + ing.scale}</td><td className="tdIngName">{ing.name}</td></>}</tr>)}
+              {recipe.ingredients.map((ing, idx) => <tr className="listForInt" key={idx} message={ing.name} >{<><td className="tdIngScale">{ing.amounth + ' ' + ing.scale}</td><td className="tdIngName">{ing.name}</td></>}</tr>)}
             </tbody></table>
           </div>
         </div>
 
         <img onClick={() => window.open(recipe.video)} src={require("../images/youtubeLogo.png")} className="youtubeIcon" alt="logo" />
-        <h2>Zubereitung</h2>
+        <h2 className="processTag">Zubereitung</h2>
         {recipe.process.map((step) => <p className="textJustify" key={step}>{step}</p>)}
         <button className="colorThemeButton addToShoppingListButton" onClick={() => addToLocalStorage(recipeID)}>Zur Einkaufsliste hinzufügen</button>
         <WhatsappShareButton className="shareButtons" url={window.location.href}>
