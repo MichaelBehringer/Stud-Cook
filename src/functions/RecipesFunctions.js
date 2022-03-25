@@ -1,11 +1,5 @@
 /* eslint eqeqeq: 0 */
 
-export function getRecipeForID(searchID) {
-	const recipes = require('../data/Recipes.json');
-
-	return recipes.filter(recipe => recipe.id == searchID)[0];
-}
-
 export function orderRecipesByName(recipes) {
 	recipes.sort(sortFunction);
 	return recipes;
@@ -23,7 +17,7 @@ function sortFunction(a, b) {
 }
 
 export function convertApiRecipeToStudyCookFormat(data){
-		const studyCookJson = {'id': data.idMeal, 'name': data.strMeal, 'duration': 0, 'image': data.strMealThumb, 'process': [data.strInstructions]}
+		const studyCookJson = {'id': data.idMeal, 'name': data.strMeal, 'duration': 0, 'image': data.strMealThumb, 'process': [data.strInstructions], 'video': data.strYoutube}
 
 		const oneToTwenty = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ,18, 19, 20]
 		// eslint-disable-next-line array-callback-return
@@ -33,6 +27,10 @@ export function convertApiRecipeToStudyCookFormat(data){
 			}
 		}).filter(notUndefined => notUndefined !== undefined && notUndefined.name !== null && notUndefined.scale !== null);
 
-		const returnJson = {...studyCookJson, 'ingredients': studyIngrediences}
+		const grammStudyIngrediences = studyIngrediences.map(ing => {
+			return {'name': ing.name, 'amounth': ing.amounth, 'scale': ing.scale.split('/')[0]}
+		})
+
+		const returnJson = {...studyCookJson, 'ingredients': grammStudyIngrediences}
 		return returnJson
 }

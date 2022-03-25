@@ -497,3 +497,10 @@ h3 {
   top: 5px;
  
 }
+
+.youtubeIcon{
+  height: 40px;
+  float: right;
+  margin-top: 20px;
+  cursor: pointer;
+}

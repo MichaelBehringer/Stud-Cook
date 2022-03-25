@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import {useNavigate } from 'react-router-dom';
-import SearchData from '../data/Recipes.json';
 import {useState} from 'react';
 import {orderRecipesByName} from "../functions/RecipesFunctions";
 import {getContainingRecipes, getStartingRecipes} from "../functions/MealDbFunctions";
@@ -11,12 +10,12 @@ function Search() {
   return (
     <div className="card cardMain searchCard">
       <h1>Suche</h1>
-      <SearchBar placeholder="Suchbegriff eingeben.." data={SearchData} />
+      <SearchBar placeholder="Suchbegriff eingeben.."/>
     </div>
   );
 }
 
-function SearchBar({ placeholder, data }) {
+function SearchBar({ placeholder }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
   const [defaultRecipes, setDefaultRecipes] = useState([]);
