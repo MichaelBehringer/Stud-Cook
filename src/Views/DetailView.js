@@ -17,8 +17,8 @@ function DetailView() {
 
   useEffect(() => {
     readComment(recipeID).then(comm => setComments(comm));
-    getSpecificRecipe(recipeID).then(res => setRecipse(convertApiRecipeToStudyCookFormat(res)))
-      
+    getSpecificRecipe(recipeID).then(res => setRecipse(convertApiRecipeToStudyCookFormat(res)));
+
   }, [recipeID]);
 
   return (recipe == null ? <div></div> :
@@ -37,8 +37,8 @@ function DetailView() {
             </tbody></table>
           </div>
         </div>
-        
-        <img  onClick={() => window.open(recipe.video)} src={require("../images/youtubeLogo.png")} className="youtubeIcon" alt="logo"/>
+
+        <img onClick={() => window.open(recipe.video)} src={require("../images/youtubeLogo.png")} className="youtubeIcon" alt="logo" />
         <h2>Zubereitung</h2>
         {recipe.process.map((step) => <p className="textJustify" key={step}>{step}</p>)}
         <button className="colorThemeButton addToShoppingListButton" onClick={() => addToLocalStorage(recipeID)}>Zur Einkaufsliste hinzufügen</button>

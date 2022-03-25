@@ -1,15 +1,15 @@
 
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import "../styles/Header.css";
-import { CSSTransition } from "react-transition-group";
-import { useNavigate } from 'react-router-dom'
+import {CSSTransition} from "react-transition-group";
+import {useNavigate} from 'react-router-dom';
 import useWindowDimensions from "../hooks/useWindowDimensions";
 
 export default function Header() {
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const navigate = useNavigate();
-  const { width } = useWindowDimensions();
+  const {width} = useWindowDimensions();
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 750px)");
@@ -35,7 +35,7 @@ export default function Header() {
 
   return (
     <header className="header">
-      <img onClick={() => navigate('/')} src={require("../images/"+ (width<=750 ? 'name_small.png' : 'name.png'))} className="headerLogo" alt="logo"/>
+      <img onClick={() => navigate('/')} src={require("../images/" + (width <= 750 ? 'name_small.png' : 'name.png'))} className="headerLogo" alt="logo" />
       <CSSTransition
         in={!isSmallScreen || isNavVisible}
         timeout={350}
@@ -43,10 +43,10 @@ export default function Header() {
         unmountOnExit
       >
         <nav className="nav">
-          <button onClick={() => {navigate('/'); toggleNav()}}>Home</button>
-          <button onClick={() => {navigate('/search'); toggleNav()}}>Suche</button>
-          <button onClick={() => {navigate('/shoppingList'); toggleNav()}}>Einkaufsliste</button>
-          <button onClick={() => {navigate('/contact'); toggleNav()}}>Kontakt</button>
+          <button onClick={() => {navigate('/'); toggleNav();}}>Home</button>
+          <button onClick={() => {navigate('/search'); toggleNav();}}>Suche</button>
+          <button onClick={() => {navigate('/shoppingList'); toggleNav();}}>Einkaufsliste</button>
+          <button onClick={() => {navigate('/contact'); toggleNav();}}>Kontakt</button>
         </nav>
       </CSSTransition>
       <button onClick={toggleNav} className="burgerButton">

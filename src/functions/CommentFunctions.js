@@ -21,13 +21,13 @@ export function generateCommentArray(comments) {
 }
 
 export function toggleWriteComment(recipeID, comments, setComments) {
-	const enteredComment = document.getElementById("inputComment").value
-	if(!isBlank(enteredComment)) {
+	const enteredComment = document.getElementById("inputComment").value;
+	if (!isBlank(enteredComment)) {
 		saveComment(recipeID, comments, setComments, enteredComment);
-		document.getElementById("inputComment").value = ''
-		toast.success('Erfolgreich gespeichert', { position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined});
+		document.getElementById("inputComment").value = '';
+		toast.success('Erfolgreich gespeichert', {position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined});
 	} else {
-		toast.warn('Keine Eingabe!', { position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined});
+		toast.warn('Keine Eingabe!', {position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined});
 	}
 
 }

@@ -9,5 +9,5 @@ export function addToLocalStorage(recipeID) {
   } else {
     localStorage.setItem('shoppingList', JSON.stringify({shoppingList: [parseInt(recipeID)]}));
   }
-  toast.success('Erfolgreich hinzugefügt', { position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined});
+  toast.success('Erfolgreich hinzugefügt', {position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined});
 }

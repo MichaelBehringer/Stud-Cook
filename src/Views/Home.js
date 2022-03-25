@@ -1,6 +1,5 @@
 import React from "react";
 import ImageSlider from "./ImageSlider";
-import Switch from "react-switch";
 
 function Home(props) {
   return (
@@ -8,7 +7,7 @@ function Home(props) {
       <div className="card cardMain">
         <h1>Top-Rezepte der Woche</h1>
         <div className="recipeContainer">
-            <ImageSlider/>
+          <ImageSlider />
         </div>
       </div>
     </div>
