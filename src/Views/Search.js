@@ -19,21 +19,20 @@ function SearchBar({placeholder}) {
   const [wordEntered, setWordEntered] = useState("");
   const [defaultRecipes, setDefaultRecipes] = useState([]);
   const navigate = useNavigate();
-  let searchWord;
 
   useEffect(() => {
     const prom1 = getStartingRecipes('a');
     const prom2 = getStartingRecipes('b');
 
     Promise.all([prom1, prom2]).then((values) => {
-      setDefaultRecipes(values[0].concat(values[1]));
-      setFilteredData(values[0].concat(values[1]));
+      const promiseResult = values[0].concat(values[1]);
+      setDefaultRecipes(promiseResult);
+      setFilteredData(promiseResult);
     });
   }, []);
 
-
   const handleFilter = (event) => {
-    searchWord = event.target.value;
+    const searchWord = event.target.value;
     setWordEntered(searchWord);
 
     if (!isBlank(searchWord)) {
@@ -60,8 +59,6 @@ function SearchBar({placeholder}) {
               </div>
             );
           })}
-
-
         </div>
       }
     </div>

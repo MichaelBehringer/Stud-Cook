@@ -1,7 +1,7 @@
 import React from "react";
 import ImageSlider from "./ImageSlider";
 
-function Home(props) {
+function Home() {
   return (
     <div>
       <div className="card cardMain">

@@ -7,16 +7,16 @@
   display: grid;
   grid-template-areas: "logo nav";
   background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-  
+
 .headerLogo {
   grid-area: logo;
   height: 70px;
   cursor: pointer;
   margin-left: 5%;
 }
-  
+
 .nav {
   display: grid;
   grid-area: nav;
@@ -33,7 +33,7 @@
   transition: 0.5s;
   text-decoration: none;
   cursor: pointer;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   border: none;
 }
 
@@ -41,7 +41,7 @@
   transform: scale(1.1);
 }
 
-.nav button:hover{
+.nav button:hover {
   color: #A9C45E;
 }
 
@@ -58,18 +58,20 @@
   transition: 0.1s;
   color: #66921B;
 }
+
 .burgerButton:active {
   transform: scale(1.2);
 }
 
-.burgerButton:hover{
+.burgerButton:hover {
   color: #A9C45E;
 }
 
 @media (max-width: 750px) {
   .header {
-    grid-template-areas: "logo burger" "nav nav";
+    grid-template-areas: "logo burger""nav nav";
   }
+
   .nav {
     grid-template-rows: repeat(4, auto);
     grid-template-columns: none;
@@ -91,14 +93,17 @@
   opacity: 0;
   transform: scale(0.5);
 }
+
 .navAnimation-enter-active {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 350ms, transform 350ms;
 }
+
 .navAnimation-exit {
   opacity: 1;
 }
+
 .navAnimation-exit-active {
   opacity: 0;
   transform: scale(0.5);

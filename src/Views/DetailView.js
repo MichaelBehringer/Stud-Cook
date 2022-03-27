@@ -6,19 +6,18 @@ import {generateCommentArray, toggleWriteComment} from "../functions/CommentFunc
 import {readComment} from "../functions/Firebase";
 import {addToLocalStorage} from "../functions/LocalStorage";
 import {convertApiRecipeToStudyCookFormat} from "../functions/RecipesFunctions";
-import 'react-toastify/dist/ReactToastify.css';
 import {getRandomRecipe, getSpecificRecipe} from "../functions/MealDbFunctions";
 
 function DetailView() {
-  const [comments, setComments] = useState({});
   const navigate = useNavigate();
+
+  const [comments, setComments] = useState({});
   const {recipeID} = useParams();
   const [recipe, setRecipse] = useState(null);
 
   useEffect(() => {
     readComment(recipeID).then(comm => setComments(comm));
     getSpecificRecipe(recipeID).then(res => setRecipse(convertApiRecipeToStudyCookFormat(res)));
-
   }, [recipeID]);
 
   return (recipe == null ? <div></div> :

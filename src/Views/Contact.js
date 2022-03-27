@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function Contact() {
   return (
     <div className="contact-wrap">
@@ -19,14 +18,13 @@ function Contact() {
         <div className="input-block">
           <input placeholder="Betreff" type="text" className="form-control" required name="issue" />
         </div>
-        <div className="input-block textarea">
+        <div className="input-block textarea textAreaZIdex">
           <textarea placeholder="Ihre Nachricht" rows="3" type="text" className="form-control" required name="message"></textarea>
         </div>
-        <button className="square-button" type="submit" id="submit-button">Senden</button>
+        <button className="square-button submitContact" type="submit" id="submit-button">Senden</button>
       </form>
     </div>
   );
-
 }
 
 export default Contact;

@@ -433,6 +433,10 @@ a:hover {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+.textAreaZIdex {
+  z-index: 0;
+}
+
 .input-block label {
   position: absolute;
   left: 25px;
@@ -492,6 +496,10 @@ a:hover {
 .contact-form .square-button:hover, .contact-form .square-button:focus {
   background-color: #66921B;
   color: white;
+}
+
+.submitContact {
+  cursor: pointer;
 }
 
 /*----page styles---*/

@@ -31,7 +31,7 @@ function ImageSlider() {
       <Slide {...slideProps}>
         {imageSliderData.map((randomRecipe, index) => (
           <div onClick={() => navigate('/detail/' + randomRecipe.idMeal)} key={index} className='box'>
-            <img alt={randomRecipe.strMeal} key={index} className="zoomIMG" src={randomRecipe.strMealThumb}/>
+            <img alt={randomRecipe.strMeal} key={index} className="zoomIMG" src={randomRecipe.strMealThumb} />
             <div className="imgCaption">{randomRecipe.strMeal.length > 27 ? randomRecipe.strMeal.slice(0, 27) + ' ...' : randomRecipe.strMeal}</div>
           </div>
         ))}
@@ -39,4 +39,5 @@ function ImageSlider() {
     </div>
   );
 }
+
 export default ImageSlider;

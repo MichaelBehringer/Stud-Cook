@@ -1,9 +1,9 @@
 
 import React, {useState, useEffect} from "react";
-import "../styles/Header.css";
 import {CSSTransition} from "react-transition-group";
 import {useNavigate} from 'react-router-dom';
 import useWindowDimensions from "../hooks/useWindowDimensions";
+import "../styles/Header.css";
 
 export default function Header() {
   const [isNavVisible, setNavVisibility] = useState(false);

@@ -1,17 +1,8 @@
 /* eslint array-callback-return: 0 */
 
 import React, {useEffect, useState} from "react";
-import jsPDF from "jspdf";
-import logo from "../images/name.png";
 import {getSpecificRecipe} from "../functions/MealDbFunctions";
-import {convertApiRecipeToStudyCookFormat} from "../functions/RecipesFunctions";
-
-function pdfGenerate(inputText) {
-  var doc = new jsPDF("portrait");
-  doc.addImage(logo, "PNG", 0, 0, 100, 20);
-  doc.text(inputText, 10, 30);
-  doc.save("Einkaufsliste.pdf");
-}
+import {convertApiRecipeToStudyCookFormat, pdfGenerate} from "../functions/RecipesFunctions";
 
 function ShoppingList() {
   const [, updateState] = React.useState();
@@ -44,9 +35,8 @@ function ShoppingList() {
         <div>
           <table><tbody>
             {
-              ings.map((ing) => <tr className="listForInt" key={ing.name} message={ing.name} >{<><td>{ing.scale}</td><td>{ing.name}</td></>}</tr>)
+              ings.map((ing, idx) => <tr className="listForInt" key={idx} message={ing.name} >{<><td>{ing.scale}</td><td>{ing.name}</td></>}</tr>)
             }
-
           </tbody></table>
         </div>
         :
@@ -70,6 +60,5 @@ function ShoppingList() {
     </div>
   );
 }
-
 
 export default ShoppingList;

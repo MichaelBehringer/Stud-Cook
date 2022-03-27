@@ -1,5 +1,8 @@
 /* eslint eqeqeq: 0 */
 
+import jsPDF from "jspdf";
+import logo from "../images/name.png";
+
 export function orderRecipesByName(recipes) {
 	recipes.sort(sortFunction);
 	return recipes;
@@ -33,4 +36,11 @@ export function convertApiRecipeToStudyCookFormat(data) {
 
 	const returnJson = {...studyCookJson, 'ingredients': grammStudyIngrediences};
 	return returnJson;
+}
+
+export function pdfGenerate(inputText) {
+  var doc = new jsPDF("portrait");
+  doc.addImage(logo, "PNG", 0, 0, 100, 20);
+  doc.text(inputText, 10, 30);
+  doc.save("Einkaufsliste.pdf");
 }
